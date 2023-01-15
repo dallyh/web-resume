@@ -1,0 +1,302 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/styles.css";
+---
+
+<Layout title="Welcome to Astro.">
+    <main class="page-container">
+        <div class="about-container">
+            <!-- Introduction -->
+            <div class="hero">
+                <h1 class="name">
+                    <strong>Dalibor</strong> Hon
+                </h1>
+                <span class="job-title">Business Consultant</span>
+                <div class="social">
+                    <button class="button"><a href="#">Download resume</a></button>
+                    <button class="button"><a href="#">LinkedIn</a></button>
+                </div>
+                <h2 class="lead">Development and design of web applications for startups and large companies.</h2>
+                <p class="about-me">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel mi
+                    dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </p>
+            </div>
+
+            <!-- Achievements -->
+            <section class="skill-cards-container">
+                <div class="skill-card skill-card-top" onclick="this.classList.toggle('active');">
+                    <div class="skill">
+                        <div class="skill-level">
+                            <span>+</span>
+                            <h2>45</h2>
+                        </div>
+                        <div class="skill-meta">
+                            <h3>Implemented Projects</h3>
+                            <span>Adapting and creating solutions for customer's needs</span>
+                        </div>
+                    </div>
+                    <div class="skill-details">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel
+                            mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        </p>
+                    </div>
+                </div>
+				<div class="skill-card" onclick="this.classList.toggle('active');">
+					<div class="skill">
+						<div class="skill-level">
+							<h2>50</h2>
+							<span>%</span>
+						</div>
+						<div class="skill-meta">
+							<h3>Business Analysis</h3>
+							<span>Analysing customer needs, creating analytic documents and developer assignments.</span>
+						</div>
+					</div>
+					<div class="skill-details">
+						<p>
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor
+							vel mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+						</p>
+					</div>
+				</div>
+
+				<div class="skill-card" onclick="this.classList.toggle('active');">
+					<div class="skill">
+						<div class="skill-level">
+							<h2>30</h2>
+							<span>%</span>
+						</div>
+
+						<div class="skill-meta">
+							<h3>Implementation</h3>
+							<span>Installing software, configuring low-code/no-code platforms.</span>
+						</div>
+					</div>
+					<div class="skill-details">
+						<p>
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor
+							vel mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+						</p>
+					</div>
+				</div>
+
+				<div class="skill-card" onclick="this.classList.toggle('active');">
+					<div class="skill">
+						<div class="skill-level">
+							<h2>20</h2>
+							<span>%</span>
+						</div>
+
+						<div class="skill-meta">
+							<h3>Programming</h3>
+							<span>Programming new software and extending existing ones.</span>
+						</div>
+					</div>
+					<div class="skill-details">
+						<p>
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor
+							vel mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+						</p>
+					</div>
+				</div>
+            </section>
+        </div>
+
+        <!-- Skills section -->
+        <h2 class="section-title">Skills</h2>
+        <section class="skills">
+            <p>Introduction</p>
+            <div class="list-card exp">
+                <div class="exp-text">+ 5 years</div>
+                <div class="exp-description">
+                    <h3>Object programming & frameworks</h3>
+                    <span>PHP, Symfony, Laravel, Silex, …</span>
+                </div>
+            </div>
+
+            <div class="list-card exp">
+                <div class="exp-text">+ 3 years</div>
+                <div class="exp-description">
+                    <h3>Design integration</h3>
+                    <span>Style and tools, JS Frameworks</span>
+                </div>
+            </div>
+
+            <div class="list-card">
+                <h3>Programming Languages And Tools</h3>
+                <ul class="dev-list-inline">
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="HTML5">
+                        <i class="fab fa-html5"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="CSS3">
+                        <i class="fab fa-css3-alt"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="JavaScript">
+                        <i class="fab fa-js-square"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="Node JS">
+                        <i class="fab fa-node-js"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="SASS">
+                        <i class="fab fa-sass"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="NPM">
+                        <i class="fab fa-npm"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="Webpack">
+                        <i class="devicon-webpack-plain"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="C#">
+                        <i class="devicon-csharp-line"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text=".NET Framework">
+                        <i class="devicon-dot-net-plain-wordmark"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text=".NET Core">
+                        <i class="devicon-dotnetcore-plain"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="Bootstrap">
+                        <i class="devicon-bootstrap-plain"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="MSSQL">
+                        <i class="devicon-microsoftsqlserver-plain-wordmark"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="GIT">
+                        <i class="devicon-git-plain"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="jQuery">
+                        <i class="devicon-jquery-plain"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="Adobe Photoshop">
+                        <i class="devicon-photoshop-plain"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="Azure">
+                        <i class="devicon-azure-plain"></i>
+                    </li>
+                    <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="TypeScript">
+                        <i class="devicon-typescript-plain"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="list-card">
+                <h3>Software and platforms</h3>
+                <ul class="software-experience">
+                    <li>
+                        <a href="https://www.abbyy.com/flexicapture/" target="_blank">ABBYY FlexiCapture</a>
+                    </li>
+                    <li>
+                        <a href="https://www.abbyy.com/finereader-server/" target="_blank"> ABBYY FineReader Server</a>
+                    </li>
+                    <li>
+                        <a href="https://www.abbyy.com/vantage/" target="_blank">ABBYY Vantage</a>
+                    </li>
+                    <li>
+                        <a href="https://www.microsoft.com/cs-cz/microsoft-365/sharepoint/collaboration" target="_blank">Microsoft SharePoint</a>
+                    </li>
+                    <li>
+                        <a href="https://powerplatform.microsoft.com/en-us/" target="_blank"> Microsoft PowerPlaftorm</a>
+                    </li>
+                    <li>
+                        <a href="https://www.m-files.com/" target="_blank">M-Files</a>
+                    </li>
+                    <li>
+                        <a href="https://www.nintex.com/process-automation/k2-software/" target="_blank"> K2 Five/K2 Cloud</a>
+                    </li>
+                </ul>
+                <p>
+                    I have experience with these software and platforms both in implementation and in customization of solutions for our customers. Integration with other related systems is also a part of my
+                    experience. In my career, I have also encountered a wide range of ERP systems such as Dynamics 365 Business Central, Helios Green, Karat! etc.
+                </p>
+            </div>
+        </section>
+
+        <!-- Certifications section -->
+        <h2 class="section-title" data-tooltip="bottom" data-tooltip-text="TEST TEST">Certifications</h2>
+        <section class="certifications">
+            <div class="list-card certifications">
+                <ul class="fa-ul">
+                    <li>
+                        <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
+                        Microsoft Certified: Power Platform Fundamentals (PL-900)
+                    </li>
+                    <li>
+                        <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
+                        ABBYY FlexiCapture 12 Basic
+                    </li>
+                    <li>
+                        <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
+                        K2 IT Developer
+                    </li>
+                    <li>
+                        <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
+                        K2 Business Analyst
+                    </li>
+                    <li>
+                        <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
+                        K2 Citizen Developer
+                    </li>
+                </ul>
+                <p>Find my currect certif...</p>
+            </div>
+        </section>
+
+        <!-- Life timeline -->
+        <h2 class="section-title">Life timeline</h2>
+        <section class="timeline">
+            <div class="timeline-card">
+                <h3>Experiences</h3>
+                <div class="meta">
+                    <span class="point"></span>
+                    <p class="title">Lead Developer @Geronimo</p>
+                    <span class="date">Today - Apr. 2016</span>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel mi
+                        dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    </p>
+                </div>
+                <div class="meta">
+                    <span class="point"></span>
+                    <p class="title">Lead Developer @Geronimo</p>
+                    <span class="date">Today - Apr. 2016</span>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel mi
+                        dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-card">
+                <h3>Education</h3>
+                <div class="meta">
+                    <span class="point"></span>
+                    <p class="title">DUT "Métiers du multimédia et de l'internet"</p>
+                    <span class="date">2015 - 2013</span>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel mi
+                        dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    </p>
+                </div>
+
+                <div class="meta">
+                    <span class="point"></span>
+                    <p class="title">Art & Design studies</p>
+                    <span class="date">2013 - 2008</span>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel mi
+                        dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer-container">
+        <span
+            >Coded by <a href="https://newtodesign.com/">New to design</a> Designed by
+            <a href="https://dribbble.com/shots/4342703-Minimal-resume-freebie-for-junior-self-taught-people">Nicolas Meuzard</a>
+        </span>
+    </footer>
+</Layout>
+
+<style></style>
