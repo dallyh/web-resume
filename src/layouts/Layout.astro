@@ -31,7 +31,10 @@ const { title } = Astro.props;
 </html>
 <script>
     import {InitializeTooltips} from "../scripts/tooltips"
+    import {AnimateGrid} from "../scripts/gridanim";
+
     InitializeTooltips();
+    AnimateGrid();
 </script>
 <style is:global>
     /*Load google font*/
