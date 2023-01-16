@@ -1,0 +1,186 @@
+@import "./variables.css";
+
+/*Load google font*/
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+
+/* Global reset*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+div,
+footer {
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+
+body {
+    line-height: 1;
+    font-family: lato, ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1rem;
+    background-color: var(--body-bg);
+    color: var(--dark-blue);
+    scroll-behavior: smooth;
+}
+
+strong {
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    text-transform: none;
+    color: var(--accent-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gray-blue-dark);
+    line-height: 26px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.spacer {
+    width: 100%;
+    justify-self: center;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, var(--light) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+p {
+    font-size: 1rem;
+    color: var(--gray-blue);
+    line-height: 22px;
+}

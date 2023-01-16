@@ -1,20 +1,42 @@
 /* Page styling */
-.page-container {
+.page-wrapper {
     max-width: 1100px;
     height: auto;
     margin: 0px auto;
-    padding: 1rem;
+    padding: 0 1rem 0rem 1rem;
+}
+
+.main-grid {
     display: grid;
     grid-auto-flow: row;
-    gap: 1rem;
+    gap: 0.5rem;
+}
+
+/* Header */
+.header-container {
+    position: sticky;
+    top: 5px;
+    display: flex;
+    z-index: 9999;
+    justify-content: flex-end;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    min-width: 150px;
+    padding: 1rem;
+    background-color: var(--light);
+    border-radius: 10px;
 }
 
 /* About section */
 .about-container {
     display: grid;
-    min-height: 100vh;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    min-height: 95vh;
     gap: 1rem;
     grid-template-rows: repeat(2, min-content);
 }
@@ -22,17 +44,36 @@
 .hero {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
-h1.name {
+.profile {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 5px;
+}
+
+.img-profile {
+    width: 96px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 2px var(--img-profile-border);
+    transition: all 300ms;
+    z-index: 1010;
+}
+
+.img-profile:hover {
+    transform: scale(2);
+}
+
+.name-header {
     font-size: 5rem;
     font-weight: 300;
     position: relative;
 }
 
 .job-title {
-    color: #4a90e2;
+    color: var(--accent-color);
     font-size: 1.5rem;
     font-weight: 400;
 }
@@ -43,11 +84,12 @@ h1.name {
 
 .social .button {
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .button {
-    background-color: #d9e7f8;
-    color: #4a90e2;
+    background-color: var(--gray-blue-light);
+    color: var(--accent-color);
     font-weight: 600;
     border-radius: 10px;
     padding: 15px 25px;
@@ -65,8 +107,7 @@ h1.name {
 
 .button:hover {
     transform: scale(1.05);
-    /* background-color: #fff; */
-    box-shadow: 0px 5px 50px -8px #ddd;
+    box-shadow: 0px 5px 50px -8px var(--light);
     cursor: pointer;
 }
 
@@ -74,7 +115,7 @@ h1.name {
     display: block;
     font-size: 24px;
     font-weight: 300;
-    color: #81899c;
+    color: var(--gray-blue);
     margin-top: 10px;
 }
 
@@ -89,6 +130,7 @@ h1.name {
 .section-title {
     font-size: 2rem;
     font-weight: 600;
+    padding: 1rem 0 0 0;
 }
 
 .list-card {
@@ -105,7 +147,7 @@ h1.name {
 
 .list-card.exp .exp-text,
 .list-card span {
-    color: #4a90e2;
+    color: var(--accent-color);
     font-weight: 600;
 }
 
@@ -120,7 +162,7 @@ h1.name {
 
 .list-card.exp .exp-description span {
     font-size: 16px;
-    color: #81899c;
+    color: var(--gray-blue);
     line-height: 22px;
 }
 
@@ -135,18 +177,18 @@ h1.name {
 }
 
 .list-card.certifications p {
-    padding: 1rem;
+    padding-top: 1rem;
 }
 
 .list-card.certifications ul li span {
     margin-left: -5px;
-    color: #4a90e2;
+    color: var(--accent-color);
     font-weight: 600;
 }
 
 .list-card.certifications ul li {
     font-size: 16px;
-    color: #81899c;
+    color: var(--gray-blue);
     line-height: 22px;
 }
 
@@ -163,12 +205,12 @@ h1.name {
     font-size: 3rem;
     transition: 300ms;
     padding: 0;
-    color: #81899c;
+    color: var(--gray-blue);
 }
 
 .dev-list-inline .dev-list-inline-item:hover {
     transform: scale(1.05);
-    color: #48a4d2;
+    color: var(--accent-color-light);
     text-shadow: 0px 0px 2px rgb(0, 0, 0, 0.3);
     cursor: pointer;
 }
@@ -189,7 +231,7 @@ h1.name {
     gap: 1rem;
     flex-direction: column;
     align-items: center;
-    background-color: #eef0f7;
+    background-color: var(--light);
     border-radius: 10px;
     padding: 2rem;
     width: 100%;
@@ -219,8 +261,8 @@ h1.name {
 
 .skill-card:hover {
     transform: scale(1.05);
-    background-color: #fff;
-    box-shadow: 0px 5px 50px -8px #ddd;
+    background-color: var(--skill-card-hover);
+    box-shadow: 0px 5px 50px -8px var(--light);
     cursor: pointer;
 }
 
@@ -232,7 +274,7 @@ h1.name {
 .skill-level span {
     font-size: 35px;
     font-weight: 300;
-    color: #5b6a9a;
+    color: var(--gray-blue-dark);
     vertical-align: top;
 }
 
@@ -241,8 +283,9 @@ h1.name {
     font-weight: 300;
     display: inline-block;
     vertical-align: top;
-    color: #5b6a9a;
+    color: var(--gray-blue-dark);
     letter-spacing: -5px;
+    animation: 1s ease-in both fadeIn;
 }
 
 .skill-meta {
@@ -255,12 +298,12 @@ h1.name {
 .skill-meta h3 {
     font-size: 20px;
     font-weight: 800;
-    color: #5b6a9a;
+    color: var(--gray-blue-dark);
     margin-bottom: 5px;
 }
 
 .skill-meta span {
-    color: #81899c;
+    color: var(--gray-blue);
     line-height: 20px;
     font-size: 16px;
 }
@@ -313,15 +356,16 @@ h1.name {
     content: "";
     position: absolute;
     width: 2px;
-    height: 125%;
+    height: 115%;
     left: 0.275rem;
     top: 1.275rem;
-    background-color: #31708f;
+    background-color: var(--calypso);
+    transform: scaleY(0);
 }
 
 .timeline-card .meta:last-of-type::before {
     background-color: unset;
-    background-image: linear-gradient(to bottom, #31708f, transparent);
+    background-image: linear-gradient(to bottom, var(--calypso), transparent);
     height: 85%;
 }
 
@@ -334,7 +378,7 @@ h1.name {
     font-size: 18px;
     font-weight: 600;
     line-height: 25px;
-    color: #5b6a9a;
+    color: var(--gray-blue-dark);
 }
 .timeline-card > .meta > .title::before {
     content: "";
@@ -344,20 +388,29 @@ h1.name {
     width: 8px;
     height: 8px;
     border-radius: 10px;
-    background: #4a90e2;
+    background: var(--accent-color);
     position: absolute;
 }
 
 .timeline-card > .meta > .date {
     font-size: 14px;
-    color: #81899c;
+    color: var(--gray-blue);
     font-weight: 300;
 }
 
 .timeline-card > .meta > .description {
     font-size: 16px;
-    color: #81899c;
+    color: var(--gray-blue);
     font-weight: 400;
+}
+
+.timeline-card.animate .meta::before {
+    transform-origin: top;
+    animation: 1s ease-in both scaleDown;
+}
+
+.timeline-card.animate .meta:nth-of-type(2)::before {
+    animation-delay: 1s;
 }
 
 /* Footer */
@@ -370,12 +423,30 @@ h1.name {
 
 .footer-container span {
     font-size: 14px;
-    color: #81899c;
+    color: var(--gray-blue);
     font-weight: 300;
 }
 
 /* Media queries */
 @media (max-width: 768px) {
+    .about-container {
+        padding-top: 0;
+        min-height: 0;
+    }
+    .hero {
+        min-height: calc(100vh - 34px - 1rem);
+    }
+
+    .profile {
+        display: block;
+    }
+
+    .lead {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1;
+    }
+
     .skill-cards-container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, max-content);
@@ -386,17 +457,17 @@ h1.name {
         grid-column: 1;
         grid-row: 1;
     }
-    
+
     .skill-cards-container .skill-card:nth-child(2) {
         grid-column: 1;
         grid-row: 2;
     }
-    
+
     .skill-cards-container .skill-card:nth-child(3) {
         grid-column: 1;
         grid-row: 3;
     }
-    
+
     .skill-cards-container .skill-card:nth-child(4) {
         grid-column: 1;
         grid-row: 4;
@@ -426,5 +497,58 @@ h1.name {
 
     .dev-list-inline .dev-list-inline-item {
         padding: 0.5rem;
+    }
+}
+
+@media print {
+    .skill-cards-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skill-card {
+        align-items: flex-start;
+    }
+
+    .skill-details {
+        display: block;
+    }
+
+    .pagebreak {
+        page-break-before: always;
+    }
+
+    .social > .button {
+        display: none;
+    }
+
+    .timeline > .timeline-card .meta::before {
+        animation: none;
+        transform: scaleY(1);
+    }
+
+    .footer-container {
+        display: none;
+    }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleDown {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
     }
 }
