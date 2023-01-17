@@ -1,0 +1,23 @@
+﻿{
+    "About_Introduction": "Dobrý den! Jsem Dalibor a má momentální pracovní role je Business Konzultant. Snažím se udržovat naše zákazníky spokojené, a naše vývojáře při smyslech.",
+    "AsusTechnicianText": "Opravování základních desek všeho druhu na úrovni malých součástek. Pájení, měření (osciloskopem), a samozřejmě čtení v elektronických schématech.",
+    "ECMBusinessConsultantText": "Konzultace ve směru digitalizace kanceláří a zbavení se papírových procesů ve firmách. Digitalizace zahrnuje automatické vytěžování údajů z dokumentů, integrace na interní systémy\r\nzákazníka a popřípadě také zavádění nových systémů, z pravidla systémů pro správu dokumentů (DMS). Využití agilních metodik, ale také waterfallu.\r\nÚzká spolupráce se zákazníkem a interními týmy jako např. vývojové oddělení, při vytváření vývojového zadání a také business analýz. \r\nSoučástí je také školení zákazníku pro práce s novými implementovanými systémy.",
+    "H2_Education": "Vzdělání",
+    "H2_Experience": "Zkušenosti",
+    "HighSchoolNaJizdarne": "Střední škola Elektrotechnická<br>Ostrava, Na Jízdárně",
+    "MaturityDiploma": "Maturita",
+    "MonetaAnalystText": "Vytváření reportů za použití nástrojů jako Microsoft Excel, SQL (Oracle), Microsoft Access, PowerBI a SAS BI. Součástí byla také tvorba procesních analýz\r\npro komerční (SMB) backoffice, se zaměřením na komerční proces RWA (risk-weighted asset).",
+    "MonetaEndUserServicesText": "Podpora interních koncových uživatelů po telefonu, emailem a dalšími kanály. Práce s ticketovacím systémem, eskalování důležitých záležitostí a také troška programování.\r\nZde jsem se začal postupně učit hlavně VBScript u maker v Microsoft Excelu.",
+    "Skills_ProgrammingLangAndTools": "Programovací jazyky a nástroje",
+    "Skills_SoftwareAndPlatforms": "Zkušenosti se softwarem a platformami (implementace, customizace)",
+    "MonetaEndUserServicesDate": "Červenec 2017 – Srpen 2018",
+    "ECMBusinessConsultantDate": "Duben 2020 – Současnost",
+    "MonetaAnalystDate": "Září 2018 – Březen 2020",
+    "AsusTechnicianDate": "Říjen 2014 – Duben 2017",
+    "InterestsText": "Řekněme že jsem opravdu aktivní člověk, i když z duše nenávidím běhání. Opravdu miluji zvedání těžkých věcí v posilovně. Také si rád zajdu na hory. Další věci kterými\r\nzaplňuji svůj volný čas jsou hraní her, programování pro zábavu a taky jedení jídla.",
+    "Skills_Introduction": "Jako business konzultant jsem si stačil osahat hodně věcí, od Windows serverů, přes konfigurace IIC a také programování/skriptování.\r\nNíže jsou uvedeny pouze ty největší oblasti, s kterými se setkávám dennodenně.",
+    "Skills_SoftwareAndPlatformsText": "Zkušenosti s těmito softwary a platformami mám jak v rámci implementace, tak také v customizaci řešení na míru šitém zákazníkovi.\r\nSamozřejmostí je také integrace na další navazující systémy. \r\nVe své kariéře jsem se také setkal s celou řadou ERP systémů jako např. Dynamics 365 Business Central, Helios Green, Karat! apod.",
+    "Skills_Other": "Ostatní",
+    "HighSchoolNaJizdarneText": "Mechanik elektrotechnik - počítačové a zabezpečovací systémy",
+    "Cert_LinkedIn": "Aktuální certifikace naleznete na mém <a href=\"https://www.linkedin.com/in/dalibor-hon/\" target=\"_blank\">LinkedIn profilu</a>."
+}

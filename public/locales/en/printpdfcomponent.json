@@ -1,0 +1,7 @@
+﻿{
+    "ModalTitle": "Print PDF",
+    "ConfirmDownload": "Please confirm that you want to download generated PDF of this webpage.",
+    "DownloadPDF": "Download PDF",
+    "ErrorNoPageToPrint": "There is no printable version for this page.",
+    "PrintWithBrowser": "Print with browser"
+}

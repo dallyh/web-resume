@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "@dallyh/web-resume",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -13,6 +13,13 @@
   "dependencies": {
     "animate-css-grid": "^1.4.3",
     "astro": "^1.9.0",
+    "astro-i18next": "^1.0.0-beta.15",
+    "country-flag-emoji-polyfill": "^0.1.4",
     "tippy.js": "^6.3.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "iso-639-1": "^2.1.15",
+    "locale-emoji": "^0.3.0"
   }
 }

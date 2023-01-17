@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import "../styles/styles.css";
 import ThemeToggle from "../components/ThemeToggle.astro";
+import LanguageSelector from "../components/LanguageSelector.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -9,6 +10,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
         <div class="header-container">
             <header>
                 <ThemeToggle />
+                <LanguageSelector />
             </header>
         </div>
         <main class="main-grid">
@@ -26,9 +28,9 @@ import ThemeToggle from "../components/ThemeToggle.astro";
                     </div>
                     <div class="social">
                         <button class="button" onclick="window.print()"><a href="#">Download resume</a></button>
-                        <button class="button"><a href="#">LinkedIn</a></button>
+                        <button class="button"><a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">LinkedIn</a></button>
                     </div>
-                    <h2 class="lead">Development and design of web applications for startups and large companies.</h2>
+                    <h2 class="lead">Analysis, design and implementation of sofware for small and large companies.</h2>
                     <p class="about-me">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel mi
                         dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -116,24 +118,44 @@ import ThemeToggle from "../components/ThemeToggle.astro";
                     </div>
                 </section>
             </div>
-            <hr class="spacer">
+            <hr class="spacer" />
             <!-- Skills section -->
             <h2 class="section-title">Skills</h2>
             <section class="skills">
-                <p>Introduction</p>
+                <p>
+                    Of course there's a lot to cover. As an business consultant I touched almost everything, from Windows Servers, through IIS configuration to pieces of code. Below are just the most noteworthy
+                    mentions.
+                </p>
+
                 <div class="list-card exp">
-                    <div class="exp-text">+ 5 years</div>
+                    <div class="exp-text">+ 1 years</div>
                     <div class="exp-description">
-                        <h3>Object programming & frameworks</h3>
-                        <span>PHP, Symfony, Laravel, Silex, …</span>
+                        <h3>Object oriented programming</h3>
+                        <span>Integrations, C#, custom in-house applications...</span>
                     </div>
                 </div>
 
                 <div class="list-card exp">
-                    <div class="exp-text">+ 3 years</div>
+                    <div class="exp-text">+ 2 years</div>
                     <div class="exp-description">
-                        <h3>Design integration</h3>
-                        <span>Style and tools, JS Frameworks</span>
+                        <h3>Business analysis</h3>
+                        <span>Process mapping, UML, developer coordination...</span>
+                    </div>
+                </div>
+
+                <div class="list-card exp">
+                    <div class="exp-text">+ 2 years</div>
+                    <div class="exp-description">
+                        <h3>Windows servers</h3>
+                        <span>Configuring servers, installing required software (on-premise, Azure, and such)...</span>
+                    </div>
+                </div>
+
+                <div class="list-card exp">
+                    <div class="exp-text">+ 4 years</div>
+                    <div class="exp-description">
+                        <h3>Relational databases</h3>
+                        <span>SQL, PLSQL, T-SQL, reporting and procedures...</span>
                     </div>
                 </div>
 
@@ -236,6 +258,10 @@ import ThemeToggle from "../components/ThemeToggle.astro";
                         </li>
                         <li>
                             <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
+                            Microsoft Certified: Microsoft Dynamics 365 Fundamentals (PL-900)
+                        </li>
+                        <li>
+                            <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
                             ABBYY FlexiCapture 12 Basic
                         </li>
                         <li>
@@ -250,8 +276,12 @@ import ThemeToggle from "../components/ThemeToggle.astro";
                             <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
                             K2 Citizen Developer
                         </li>
+                        <li>
+                            <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
+                            M-Files Solution Engineer
+                        </li>
                     </ul>
-                    <p>Find my currect certif...</p>
+                    <p>You can find current certifications on my <a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">LinkedIn profile</a>.</p>
                 </div>
             </section>
 
@@ -261,40 +291,48 @@ import ThemeToggle from "../components/ThemeToggle.astro";
                 <div class="timeline-card">
                     <h3>Experiences</h3>
                     <div class="meta">
-                        <p class="title">Lead Developer @Geronimo</p>
-                        <span class="date">Today - Apr. 2016</span>
+                        <p class="title">ECM Business Consultant</p>
+                        <p>Konica Minolta IT Solutions Czech s.r.o</p>
+                        <span class="date">April 2020 - Present</span>
                         <p class="description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel
-                            mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Consulting in the scope of office digitization and getting rid of paper processes in companies. Digitization includes automatic extraction of data from documents, integration with
+                            internal systems customer and possibly also the introduction of new systems, such as the document management systems (DMS. Use of agile methodologies, but also of waterfall. Close
+                            cooperation with the customer and internal teams, such as the development department, when creating development assignments and business analyses. Consulting also includes customer
+                            training for working with new implemented systems.
                         </p>
                     </div>
                     <div class="meta">
-                        <p class="title">Lead Developer @Geronimo</p>
-                        <span class="date">Today - Apr. 2016</span>
+                        <p class="title">Analyst, Shared Services</p>
+                        <p>MONETA Money Bank a.s.</p>
+                        <span class="date">September 2018 - March 2020</span>
                         <p class="description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel
-                            mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Creating reports using tools such as Microsoft Excel, SQL (Oracle), Microsoft Access, PowerBI and SAS BI. Part of the job also was creating process analysis for commercial (SMB)
+                            backoffice, with a focus on the RWA (risk-weighted asset) commercial process.
                         </p>
+                    </div>
+                    <div class="meta">
+                        <p class="title">Administrator End User Services, IT</p>
+                        <p>MONETA Money Bank a.s.</p>
+                        <span class="date">July 2017 - August 2018</span>
+                        <p class="description">
+                            Support of internal end users by phone, email and other channels. Working with the ticketing system, escalating important issues and also a bit of programming. Here I gradually
+                            started to learn mainly VBScript with macros in Microsoft Excel.
+                        </p>
+                    </div>
+                    <div class="meta">
+                        <p class="title">Motherboard technician</p>
+                        <p>ASUS Czech Service s.r.o.</p>
+                        <span class="date">October 2014 - April 2017</span>
+                        <p class="description">Repairing motherboards of all kinds on micro level. Soldering, measuring (with oscilloscope), and of course reading in motherboard schematics.</p>
                     </div>
                 </div>
                 <div class="timeline-card">
                     <h3>Education</h3>
                     <div class="meta">
-                        <p class="title">DUT "Métiers du multimédia et de l'internet"</p>
-                        <span class="date">2015 - 2013</span>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel
-                            mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        </p>
-                    </div>
-
-                    <div class="meta">
-                        <p class="title">Art & Design studies</p>
-                        <span class="date">2013 - 2008</span>
-                        <p class="description">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel
-                            mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        </p>
+                        <p class="title">High School of Electrical Engineering Ostrava, Na Jízdárně</p>
+                        <p>GCE Advanced Level</p>
+                        <span class="date">2010 - 2014</span>
+                        <p class="description">Mechanical and electrical engineering - computer and security systems</p>
                     </div>
                 </div>
             </section>
@@ -302,10 +340,9 @@ import ThemeToggle from "../components/ThemeToggle.astro";
     </div>
     <!-- Footer -->
     <footer class="footer-container">
-        <span
-            >Coded by <a href="https://newtodesign.com/">New to design</a> Designed by
-            <a href="https://dribbble.com/shots/4342703-Minimal-resume-freebie-for-junior-self-taught-people">Nicolas Meuzard</a>
-        </span>
+        <p>Created by: Dalibor Hon</p>
+        <p>Hosted with ❤️ by <a href="https://www.github.com">GitHub</a>. Built with <a href="https://astro.build/"><span class="svg-astro"></span></a>.</p>
+        <p>Original design by <a href="https://newtodesign.com/minimal-html-css-resume-template/">New to design</a>.</p>
     </footer>
 </Layout>
 

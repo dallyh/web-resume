@@ -1,0 +1,113 @@
+---
+import ModalDialog from "./ModalDialog.astro";
+import LanguageSelector from "./LanguageSelector.astro";
+import i18next, { i18n, t } from "i18next";
+import ISO6991 from "iso-639-1";
+import localeEmoji from "locale-emoji";
+
+let modalTitle = t("languagePopup:PopupTitle");
+let currentLanguage = ISO6991.getNativeName(i18next.language);
+let currentLocale = i18next.language;
+---
+
+<ModalDialog dialogId="languageSelectDialog" modalTitle={modalTitle}>
+    <div class="lang-select-dialog-body" slot="body">
+        <p>{t("languagePopup:PopupBody")}<span style="text-transform: capitalize; font-weight: 600;"> {currentLanguage} {localeEmoji(currentLocale)}</span>.</p>
+        <LanguageSelector showFlag={true} />
+    </div>
+</ModalDialog>
+
+<style>
+    .lang-select-dialog-body p {
+        margin-bottom: 1rem;
+    }
+</style>
+
+<script>
+    import AstroI18nextConfig from "../../astro-i18next.config.mjs";
+
+    const basePath = import.meta.env.BASE_URL;
+    const path = window.location.pathname;
+    const url = window.location.origin;
+    const defaultLanguage = AstroI18nextConfig.defaultLocale;
+
+    // Check for locale in path
+    const checkPathLocale = (language: string) => {
+        let currentPathArray = path.split("/");
+        if (currentPathArray[1] !== basePath) {
+            // Check for base path and determine which index to use
+            if (language === currentPathArray[1]) {
+                // If it's empty (base path is "/" - path.split ends up with nothing on this index)
+                return true;
+            }
+        } else {
+            if (language === currentPathArray[2]) {
+                return true;
+            }
+        }
+
+        return false;
+    };
+
+    // Transfer user if theres a value in local storage
+    const redirectUser = () => {
+        let language = window.localStorage.getItem("language") as string;
+
+        // Check for deafult langugage
+        if (language === defaultLanguage) return;
+
+        // Check for locale in URL
+        if (checkPathLocale(language)) return;
+
+        // Redirection
+        if (language !== null) {
+            let redirectionUrl = "";
+            if (basePath !== null) {
+                redirectionUrl = url + basePath + language;
+            } else {
+                redirectionUrl = url + "/" + language + path;
+            }
+
+            window.location.href = redirectionUrl;
+        }
+    };
+
+    // Open dialog if there is no selected language
+    // Redirect if there is already a language
+    const languageDialog = document.querySelector("#languageSelectDialog") as HTMLDialogElement;
+    window.addEventListener("DOMContentLoaded", () => {
+        if (window.localStorage.getItem("language") === null) {
+            languageDialog.showModal();
+        } else {
+            redirectUser();
+        }
+    });
+
+    // Check for cancel button
+    languageDialog.addEventListener("close", () => {
+        let currentLanguage = languageSelect.getAttribute("data-js-current-language");
+
+        if (currentLanguage === null) {
+            console.error("Could not find 'data-js-current-language' attribute.");
+            return;
+        }
+        if (languageDialog.returnValue === "cancel") {
+            window.localStorage.setItem("language", currentLanguage);
+        }
+    });
+
+    // Save selected language in local storage
+    const languageSelect = document.querySelector(".language-selector > select") as HTMLSelectElement;
+    languageSelect.addEventListener(
+        "change",
+        (e) => {
+            let selectedLanguage = languageSelect[languageSelect.selectedIndex].getAttribute("data-js-language");
+            if (selectedLanguage === null) {
+                console.error("Could not find 'data-js-language' attribute.");
+                return;
+            }
+            window.localStorage.setItem("language", selectedLanguage);
+        },
+        false
+    );
+</script>

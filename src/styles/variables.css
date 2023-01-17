@@ -3,6 +3,8 @@ html,
 ::before{
     --gray-blue: #81899c;
     --gray-blue-light: #d9e7f8;
+    --button-bg: var(--gray-blue-light); /* Button color */
+    --button-color: var(--accent-color);
     --light: #eef0f7;
     --skill-card-hover: #fff;
     --body-bg: #fefefe;
@@ -14,22 +16,23 @@ html,
     --slider-bg: #dddddd;
     --slider-bg-before: #fff;
     --light-gray: rgb(189, 189, 189);
-    --img-profile-border: #000;
+    --img-profile-border: var(--calypso);
 }
 
 html[data-theme="dark"],
 html[data-theme="dark"] ::after,
 html[data-theme="dark"] ::before {
-    --gray-blue: #81899c;
-    --gray-blue-light: #d9e7f8;
-    --light: #eef0f7;
-    --skill-card-hover: #fff;
-    --body-bg: #303030;
+    --gray-blue: #9ea7bd; /* Body color - used for H2 */
+    --button-bg: #587faf; /* Button color */
+    --button-color: var(--slider-bg);
+    --light: #4b5162; /* Skill card color */
+    --skill-card-hover: var(--body-bg);
+    --body-bg: #383c4a;
     --dark-blue: #04143a;
-    --calypso: #31708f;
-    --accent-color-light: #48a4d2;
-    --accent-color: #4a90e2;
-    --gray-blue-dark: #5b6a9a;
+    --calypso: #31708f; /* Timeline line color */
+    --accent-color: #48a4d2; /* Light accent, used for theme switcher */
+    --accent-color-light: #4a90e2;
+    --gray-blue-dark: #3998eb; /* H3 color */
     --slider-bg: #dddddd;
     --slider-bg-before: #fff;
     --slider-input-bg: var(--accent-color-light);

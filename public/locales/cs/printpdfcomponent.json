@@ -1,0 +1,7 @@
+﻿{
+    "ModalTitle": "Tisknout PDF",
+    "DownloadPDF": "Stáhnout PDF",
+    "ConfirmDownload": "Prosím potvrďte stažení vygenerovaného PDF souboru.",
+    "ErrorNoPageToPrint": "Pro tuto stránku není nadefinovaná verze k tisknutí.",
+    "PrintWithBrowser": "Tisk prohlížečem"
+}
