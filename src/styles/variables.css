@@ -1,6 +1,6 @@
-html, 
-::after, 
-::before{
+html,
+::after,
+::before {
     --gray-blue: #81899c;
     --gray-blue-light: #d9e7f8;
     --button-bg: var(--gray-blue-light); /* Button color */
@@ -18,7 +18,7 @@ html,
     --light-gray: rgb(189, 189, 189);
     --img-profile-border: var(--calypso);
     --button-color: var(--gray-blue);
-    --button-hover-color:var(--gray-blue-dark);
+    --button-hover-color: var(--gray-blue-dark);
 }
 
 html[data-theme="dark"],
@@ -40,6 +40,30 @@ html[data-theme="dark"] ::before {
     --slider-input-bg: var(--accent-color-light);
     --light-gray: rgb(189, 189, 189);
     --img-profile-border: var(--accent-color);
-    --button-hover-color:var(--gray-blue-light);
+    --button-hover-color: var(--gray-blue-light);
 }
 
+@media print {
+    html[data-theme="dark"],
+    html[data-theme="dark"] ::after,
+    html[data-theme="dark"] ::before {
+        --gray-blue: #81899c;
+        --gray-blue-light: #d9e7f8;
+        --button-bg: var(--gray-blue-light); /* Button color */
+        --button-color: var(--accent-color);
+        --light: #eef0f7;
+        --skill-card-hover: #fff;
+        --body-bg: #fefefe;
+        --dark-blue: #04143a;
+        --calypso: #31708f;
+        --accent-color-light: #48a4d2;
+        --accent-color: #4a90e2;
+        --gray-blue-dark: #5b6a9a;
+        --slider-bg: #dddddd;
+        --slider-bg-before: #fff;
+        --light-gray: rgb(189, 189, 189);
+        --img-profile-border: var(--calypso);
+        --button-color: var(--gray-blue);
+        --button-hover-color: var(--gray-blue-dark);
+    }
+}

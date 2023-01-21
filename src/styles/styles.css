@@ -81,7 +81,7 @@ header.hidden {
 }
 
 .img-profile:hover {
-    transform: scale(2);
+    transform: scale(2) translateY(25px) translatex(25px);
 }
 
 .name-header {
@@ -515,7 +515,18 @@ header.hidden {
     }
 }
 
+/* Print styles */
 @media print {
+    .header-container {
+        display: none;
+    }
+
+    .img-profile {
+        width: 196px;
+        height: 198px;
+        margin-bottom: 25px;
+    }
+
     .skill-cards-container {
         display: flex;
         flex-direction: column;
@@ -533,7 +544,15 @@ header.hidden {
         page-break-before: always;
     }
 
+    .skill-click {
+        display: none;
+    }
+
     .social > .button {
+        display: none;
+    }
+
+    .spacer {
         display: none;
     }
 
