@@ -1,11 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import "../styles/styles.css";
-import LanguageSelector from "../components/LanguageSelector.astro";
-import DarkModeToggle from "../components/DarkModeToggle.astro";
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/styles.css";
+import LanguageSelector from "../../components/LanguageSelector.astro";
+import DarkModeToggle from "../../components/DarkModeToggle.astro";
 import i18next, { t, changeLanguage } from "i18next";
 
-changeLanguage("cs");
+changeLanguage("en");
 ---
 
 <Layout title={`${t("shared:NamePossesive")} ${t("shared:Resume")}`}>

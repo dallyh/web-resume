@@ -6,14 +6,15 @@ import ISO6991 from "iso-639-1";
 import localeEmoji from "locale-emoji";
 
 let modalTitle = t("languagePopup:PopupTitle");
+let closeButtonText = t("shared:PopupClose");
 let currentLanguage = ISO6991.getNativeName(i18next.language);
 let currentLocale = i18next.language;
 ---
 
-<ModalDialog dialogId="languageSelectDialog" modalTitle={modalTitle}>
+<ModalDialog dialogId="languageSelectDialog" modalTitle={modalTitle} closeButtonText={closeButtonText}>
     <div class="lang-select-dialog-body" slot="body">
         <p>{t("languagePopup:PopupBody")}<span style="text-transform: capitalize; font-weight: 600;"> {currentLanguage} {localeEmoji(currentLocale)}</span>.</p>
-        <LanguageSelector showFlag={true} />
+        <LanguageSelector showFlag={true} id="modalLanguageSelector"/>
     </div>
 </ModalDialog>
 
@@ -30,6 +31,7 @@ let currentLocale = i18next.language;
     const path = window.location.pathname;
     const url = window.location.origin;
     const defaultLanguage = AstroI18nextConfig.defaultLocale;
+    const languageSelect = document.querySelector(".language-selector > select") as HTMLSelectElement;
 
     // Check for locale in path
     const checkPathLocale = (language: string) => {
@@ -54,9 +56,10 @@ let currentLocale = i18next.language;
         let language = window.localStorage.getItem("language") as string;
 
         // Check for deafult langugage
-        if (language === defaultLanguage) return;
-
-        // Check for locale in URL
+        if (language === defaultLanguage){
+            language = "";
+        }
+        // Check for locale in URL, do not redirect here, when user is already on selected language
         if (checkPathLocale(language)) return;
 
         // Redirection
@@ -67,8 +70,7 @@ let currentLocale = i18next.language;
             } else {
                 redirectionUrl = url + "/" + language + path;
             }
-
-            window.location.href = redirectionUrl;
+            window.location.href = redirectionUrl;        
         }
     };
 
@@ -95,19 +97,4 @@ let currentLocale = i18next.language;
             window.localStorage.setItem("language", currentLanguage);
         }
     });
-
-    // Save selected language in local storage
-    const languageSelect = document.querySelector(".language-selector > select") as HTMLSelectElement;
-    languageSelect.addEventListener(
-        "change",
-        (e) => {
-            let selectedLanguage = languageSelect[languageSelect.selectedIndex].getAttribute("data-js-language");
-            if (selectedLanguage === null) {
-                console.error("Could not find 'data-js-language' attribute.");
-                return;
-            }
-            window.localStorage.setItem("language", selectedLanguage);
-        },
-        false
-    );
 </script>

@@ -13,14 +13,12 @@ export interface Props extends astroHTML.JSX.SelectHTMLAttributes {
 
 const supportedLanguages = i18next.languages;
 const currentLanguage = i18next.language;
-
 const { pathname } = Astro.url;
-
-const { showFlag = false, ...attributes } = Astro.props;
+const { showFlag = false, id, ...attributes } = Astro.props;
 ---
 
 <div class="language-selector">
-    <select onchange="location = this.value;" {...attributes} data-js-current-language={currentLanguage}>
+    <select {...attributes} data-js-current-language={currentLanguage}>
         {
             supportedLanguages.map((supportedLanguage: string) => {
                 let value = localizePath(pathname, supportedLanguage);
@@ -36,6 +34,22 @@ const { showFlag = false, ...attributes } = Astro.props;
         }
     </select>
 </div>
+
+<script>
+    const languageSelector = document.querySelectorAll(".language-selector > select");
+    languageSelector.forEach((selector) => {
+        selector.addEventListener("change", function (e) {
+            let currectSelector = e.target as HTMLSelectElement;
+            let selectedLanguage = currectSelector[currectSelector.selectedIndex].getAttribute("data-js-language");
+            if (selectedLanguage === null) {
+                console.error("Could not find 'data-js-language' attribute.");
+                return;
+            }
+            window.localStorage.setItem("language", selectedLanguage);
+            window.location.href = currectSelector.value;
+        });
+    });
+</script>
 
 <style>
     .language-selector {
