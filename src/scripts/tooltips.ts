@@ -20,13 +20,23 @@ export const InitializeTooltips = () => {
         let content = tooltip.attributes.getNamedItem("data-tooltip-text")?.value;
         // Get placement
         let placement = tooltip.attributes.getNamedItem("data-tooltip")?.value as Placement;
+        // Show tooltip on page load
+        let showOnLoadDelay = Number(tooltip.attributes.getNamedItem("data-tooltip-pageload")?.value);
 
         console.info(`Content ${content}, placement: ${placement}`);
-        tippy(tooltip, {
+        let tippyInstance = tippy(tooltip, {
             content: content,
             placement: placement,
             animation: 'shift-away-subtle'
         });
+
+        if (showOnLoadDelay > 0)
+        {
+            tippyInstance.show();
+            setTimeout(() => {
+                tippyInstance.hide();
+                            }, showOnLoadDelay)
+        }
     }
 
     tooltips.forEach((e) => {

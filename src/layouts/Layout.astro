@@ -1,6 +1,8 @@
 ---
 import LanguageSelectDialog from '../components/LanguageSelectDialog.astro';
 import ModalDialog from '../components/ModalDialog.astro';
+import { t } from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
 
 export interface Props {
     title: string;
@@ -17,6 +19,7 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <link rel="alternate" hreflang="x-default" href={Astro.url.origin} />
+        <HeadHrefLangs />
         <title>{title}</title>
         <!-- Dev icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -40,12 +43,14 @@ const { title } = Astro.props;
         </script>
     </head>
     <body>
+        <!-- 
         <ModalDialog dialogId="underConstruction" modalTitle="Site under construction" openDialog={true} closeButtonText={"Close"} openOnce={true}>
             <div slot="body">
                 <p>Site is currently under construction and work in progress. Expect random crawling bugs.</p>
             </div>
         </ModalDialog>
-        <LanguageSelectDialog />
+        -->
+        <LanguageSelectDialog closeButtonText={t("shared:PopupClose")}/>
         <slot />
     </body>
 </html>
@@ -54,6 +59,7 @@ const { title } = Astro.props;
     import "../scripts/counters";
     import "../scripts/timeline";
     import "../scripts/header";
+    import "../scripts/skillcard"
 
     InitializeTooltips();
 </script>

@@ -17,6 +17,8 @@ html,
     --slider-bg-before: #fff;
     --light-gray: rgb(189, 189, 189);
     --img-profile-border: var(--calypso);
+    --button-color: var(--gray-blue);
+    --button-hover-color:var(--gray-blue-dark);
 }
 
 html[data-theme="dark"],
@@ -38,5 +40,6 @@ html[data-theme="dark"] ::before {
     --slider-input-bg: var(--accent-color-light);
     --light-gray: rgb(189, 189, 189);
     --img-profile-border: var(--accent-color);
+    --button-hover-color:var(--gray-blue-light);
 }
 

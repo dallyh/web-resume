@@ -1,0 +1,110 @@
+<!-- Hidden from screen readers because it only controls visual presentation --><!-- Credit: https://codepen.io/tillytoby/pen/KKWJRRP -->
+<button class="dark-mode-toggle" aria-hidden="true">
+    <svg class="dark-mode-toggle__icon" width="24" height="24" viewBox="0 0 24 24">
+        <defs>
+            <mask id="mask">
+                <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+                <circle class="dark-mode-toggle__cut-out" r="6" cx="24" cy="10" fill="black"></circle>
+            </mask>
+        </defs>
+        <circle class="dark-mode-toggle__center-circle" r="6" cx="12" cy="12" fill="currentColor" mask="url(#mask)"></circle>
+        <g class="dark-mode-toggle__rays" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" x2="12" y1="3" y2="1"></line>
+            <line x1="21" x2="23" y1="12" y2="12"></line>
+            <line x1="12" x2="12" y1="21" y2="23"></line>
+            <line x1="1" x2="3" y1="12" y2="12"></line>
+        </g>
+        <g class="dark-mode-toggle__rays" stroke="currentColor" stroke-width="2" stroke-linecap="round" transform="rotate(45 12 12)">
+            <line x1="12" x2="12" y1="3" y2="1"></line>
+            <line x1="21" x2="23" y1="12" y2="12"></line>
+            <line x1="12" x2="12" y1="21" y2="23"></line>
+            <line x1="1" x2="3" y1="12" y2="12"></line>
+        </g>
+    </svg>
+</button>
+
+<style>
+    .dark-mode-toggle {
+        border: 0;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .dark-mode-toggle__icon {
+        width: 34px;
+        height: auto;
+        color: var(--gray-blue);
+        transition: color 0.2s linear;
+    }
+
+    .dark-mode-toggle__icon:hover {
+        color: var(--accent-color);
+    }
+
+    .dark-mode-toggle__icon--moon {
+        color: white;
+        opacity: 0.6;
+        transition: opacity 0.2s linear, color 0.2s linear;
+    }
+
+    .dark-mode-toggle__icon--moon:hover {
+        color: var(--accent-color);
+        opacity: 0.8;
+    }
+
+    .dark-mode-toggle__rays {
+        transition: opacity 0.2s linear 0.2s;
+    }
+
+    .dark-mode-toggle__icon--moon .dark-mode-toggle__rays {
+        transition: opacity 0.2s linear;
+        opacity: 0;
+    }
+
+    .dark-mode-toggle__cut-out {
+        transition: transform 0.5s cubic-bezier(0.54, -0.42, 0.29, 1.3);
+    }
+
+    .dark-mode-toggle__icon--moon .dark-mode-toggle__cut-out {
+        transform: translateX(-30%);
+        transition: transform 0.5s cubic-bezier(0.21, 0.17, 0.43, 1.43);
+    }
+</style>
+
+<script>
+    // Get the theme toggle input
+    const themeToggle = document.querySelector(".dark-mode-toggle") as HTMLButtonElement;
+    // Function that will switch the theme based on if the theme toggle is checked or not
+    const switchInputTheme = (e: Event) => {
+        if (e === null) return;
+
+        let theme = document.documentElement.getAttribute("data-theme");
+        if (theme === "light") {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+            themeToggle.children[0].classList.add("dark-mode-toggle__icon--moon");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+            themeToggle.children[0].classList.remove("dark-mode-toggle__icon--moon");
+        }
+    };
+
+    // Add an event listener to the theme toggle, which will switch the theme
+    themeToggle.addEventListener("click", switchInputTheme, false);
+
+    // Get the current theme from local storage
+    const currentTheme = localStorage.getItem("theme");
+    const matchMediaScheme = () => {
+        // If the current local storage item can be found
+        if (currentTheme) {
+            // If the current theme is dark, check the theme toggle
+            if (currentTheme === "dark") {
+                themeToggle.children[0].classList.add("dark-mode-toggle__icon--moon");
+            }
+        }
+    };
+    matchMediaScheme();
+</script>

@@ -2,7 +2,7 @@
 export default {
     defaultLocale: "cs",
     locales: ["cs", "en"],
-    namespaces: ["footer", "index", "navigation", "printpdfcomponent", "shared", "languagePopup"],
+    namespaces: ["footer", "index", "printpdfcomponent", "shared", "languagePopup"],
     defaultNamespace: "common",
     i18nextServer: {
         debug: true,

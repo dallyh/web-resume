@@ -1,15 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/styles.css";
-import ThemeToggle from "../components/ThemeToggle.astro";
 import LanguageSelector from "../components/LanguageSelector.astro";
+import DarkModeToggle from "../components/DarkModeToggle.astro";
+import i18next, { t } from "i18next";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={`${t("shared:NamePossesive")} ${t("shared:Resume")}`}>
     <div class="page-wrapper">
         <div class="header-container">
             <header>
-                <ThemeToggle />
+                <DarkModeToggle />
                 <LanguageSelector />
             </header>
         </div>
@@ -23,61 +24,52 @@ import LanguageSelector from "../components/LanguageSelector.astro";
                             <h1 class="name-header">
                                 <strong>Dalibor</strong> Hon
                             </h1>
-                            <span class="job-title">Business Consultant</span>
+                            <span class="job-title">{t("index:CurrentPosition")}</span>
                         </div>
                     </div>
                     <div class="social">
-                        <button class="button" onclick="window.print()"><a href="#">Download resume</a></button>
+                        <button class="button" onclick="window.print()"><a href="#">{t("shared:DownloadResume")}</a></button>
                         <button class="button"><a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">LinkedIn</a></button>
                     </div>
-                    <h2 class="lead">Analysis, design and implementation of sofware for small and large companies.</h2>
-                    <p class="about-me">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor vel mi
-                        dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    </p>
+                    <h2 class="lead">{t("index:Lead")}</h2>
+                    <p class="about-me">{t("index:AboutIntroduction")}</p>
                 </div>
 
                 <!-- Achievements -->
                 <section class="skill-cards-container">
-                    <div class="skill-card" onclick="this.classList.toggle('active');">
+                    <div class="skill-card">
                         <div class="skill">
                             <div class="skill-level">
                                 <span>+</span>
                                 <h2 data-count="45">45</h2>
                             </div>
                             <div class="skill-meta">
-                                <h3>Implemented Projects</h3>
-                                <span>Adapting and creating solutions for customer's needs.</span>
-                                <p>Click for more info.</p>
+                                <h3>{t("index:CardProjectTitle")}</h3>
+                                <span>{t("index:CardProjectDescription")}</span>
                             </div>
                         </div>
+                        <p class="skill-click">{t("index:CardClick")}</p>
                         <div class="skill-details">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor
-                                vel mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            </p>
+                            <p>{t("index:CardProjectDetail")}</p>
                         </div>
                     </div>
-                    <div class="skill-card" onclick="this.classList.toggle('active');">
+                    <div class="skill-card">
                         <div class="skill">
                             <div class="skill-level">
                                 <h2 data-count="50">50</h2>
                                 <span>%</span>
                             </div>
                             <div class="skill-meta">
-                                <h3>Business Analysis</h3>
-                                <span>Analysing customer needs, creating analytic documents and developer assignments.</span>
+                                <h3>{t("index:CardBATitle")}</h3>
+                                <span>{t("index:CardBADescription")}</span>
                             </div>
                         </div>
+                        <p class="skill-click">{t("index:CardClick")}</p>
                         <div class="skill-details">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor
-                                vel mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            </p>
+                            <p>{t("index:CardBADetail")}</p>
                         </div>
                     </div>
-
-                    <div class="skill-card" onclick="this.classList.toggle('active');">
+                    <div class="skill-card">
                         <div class="skill">
                             <div class="skill-level">
                                 <h2 data-count="30">30</h2>
@@ -85,82 +77,75 @@ import LanguageSelector from "../components/LanguageSelector.astro";
                             </div>
 
                             <div class="skill-meta">
-                                <h3>Implementation</h3>
-                                <span>Installing software, configuring low-code/no-code platforms.</span>
+                                <h3>{t("index:CardImplementationTitle")}</h3>
+                                <span>{t("index:CardImplementationDescription")}</span>
                             </div>
                         </div>
+                        <p class="skill-click">{t("index:CardClick")}</p>
                         <div class="skill-details">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor
-                                vel mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            </p>
+                            <p>{t("index:CardImplementationDetail")}</p>
                         </div>
                     </div>
-
-                    <div class="skill-card" onclick="this.classList.toggle('active');">
+                    <div class="skill-card">
                         <div class="skill">
                             <div class="skill-level">
                                 <h2 data-count="20">20</h2>
                                 <span>%</span>
                             </div>
-
                             <div class="skill-meta">
-                                <h3>Programming</h3>
-                                <span>Programming new software and extending existing ones.</span>
+                                <h3>{t("index:CardDevTitle")}</h3>
+                                <span>{t("index:CardDevDescription")}</span>         
                             </div>
                         </div>
+                        <p class="skill-click">{t("index:CardClick")}</p>
                         <div class="skill-details">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Maecenas libero. Fusce tellus. Nunc dapibus tortor
-                                vel mi dapibus sollicitudin. Aenean fermentum risus id tortor. Ut tempus purus at lorem. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            </p>
+                            <p>{t("index:CardDevDetail")}</p>
                         </div>
                     </div>
                 </section>
             </div>
             <hr class="spacer" />
             <!-- Skills section -->
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title">{t("index:SectionSkills")}</h2>
             <section class="skills">
                 <p>
-                    Of course there's a lot to cover. As an business consultant I touched almost everything, from Windows Servers, through IIS configuration to pieces of code. Below are just the most noteworthy
-                    mentions.
+                    {t("index:SkillsIntroduction")}
                 </p>
 
                 <div class="list-card exp">
-                    <div class="exp-text">+ 1 years</div>
+                    <div class="exp-text">+ 1 {t("index:SkillsYears")}</div>
                     <div class="exp-description">
-                        <h3>Object oriented programming</h3>
-                        <span>Integrations, C#, custom in-house applications...</span>
+                        <h3>{t("index:SkillsOOP")}</h3>
+                        <span>{t("index:SkillsOOPDescription")}</span>
                     </div>
                 </div>
 
                 <div class="list-card exp">
-                    <div class="exp-text">+ 2 years</div>
+                    <div class="exp-text">+ 2 {t("index:SkillsYears")}</div>
                     <div class="exp-description">
-                        <h3>Business analysis</h3>
-                        <span>Process mapping, UML, developer coordination...</span>
+                        <h3>{t("index:SkillsBA")}</h3>
+                        <span>{t("index:SkillsBADescription")}</span>
                     </div>
                 </div>
 
                 <div class="list-card exp">
-                    <div class="exp-text">+ 2 years</div>
+                    <div class="exp-text">+ 2 {t("index:SkillsYears")}</div>
                     <div class="exp-description">
-                        <h3>Windows servers</h3>
-                        <span>Configuring servers, installing required software (on-premise, Azure, and such)...</span>
+                        <h3>{t("index:SkillsWindowsServers")}</h3>
+                        <span>{t("index:SkillsWindowsServersDescription")}</span>
                     </div>
                 </div>
 
                 <div class="list-card exp">
-                    <div class="exp-text">+ 4 years</div>
+                    <div class="exp-text">+ 4 {t("index:SkillsYears")}</div>
                     <div class="exp-description">
-                        <h3>Relational databases</h3>
-                        <span>SQL, PLSQL, T-SQL, reporting and procedures...</span>
+                        <h3>{t("index:SkillsDatabases")}</h3>
+                        <span>{t("index:SkillsDatabasesDescription")}</span>
                     </div>
                 </div>
 
                 <div class="list-card">
-                    <h3>Programming Languages And Tools</h3>
+                    <h3>{t("index:SkillsProgrammingLangAndTools")}</h3>
                     <ul class="dev-list-inline">
                         <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="HTML5">
                             <i class="fab fa-html5"></i>
@@ -216,7 +201,7 @@ import LanguageSelector from "../components/LanguageSelector.astro";
                     </ul>
                 </div>
                 <div class="list-card">
-                    <h3>Software and platforms</h3>
+                    <h3>{t("index:SkillsSoftwareAndPlatforms")}</h3>
                     <ul class="software-experience">
                         <li>
                             <a href="https://www.abbyy.com/flexicapture/" target="_blank">ABBYY FlexiCapture</a>
@@ -241,14 +226,13 @@ import LanguageSelector from "../components/LanguageSelector.astro";
                         </li>
                     </ul>
                     <p>
-                        I have experience with these software and platforms both in implementation and in customization of solutions for our customers. Integration with other related systems is also a part of
-                        my experience. In my career, I have also encountered a wide range of ERP systems such as Dynamics 365 Business Central, Helios Green, Karat! etc.
+                        {t("index:SkillsSoftwareAndPlatformsDescription")}
                     </p>
                 </div>
             </section>
 
             <!-- Certifications section -->
-            <h2 class="section-title">Certifications</h2>
+            <h2 class="section-title">{t("index:SectionCertifications")}</h2>
             <section class="certifications">
                 <div class="list-card certifications">
                     <ul class="fa-ul">
@@ -281,58 +265,55 @@ import LanguageSelector from "../components/LanguageSelector.astro";
                             M-Files Solution Engineer
                         </li>
                     </ul>
-                    <p>You can find current certifications on my <a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">LinkedIn profile</a>.</p>
+                    <p><Fragment set:html={t("index:CertLinkedIn")}/></p>
                 </div>
             </section>
 
             <!-- Life timeline -->
-            <h2 class="section-title pagebreak">Life timeline</h2>
+            <h2 class="section-title pagebreak">{t("index:TimelineTitle")}</h2>
             <section class="timeline">
                 <div class="timeline-card">
-                    <h3>Experiences</h3>
+                    <h3>{t("index:SectionExperience")}</h3>
                     <div class="meta">
                         <p class="title">ECM Business Consultant</p>
                         <p>Konica Minolta IT Solutions Czech s.r.o</p>
-                        <span class="date">April 2020 - Present</span>
+                        <span class="date">{t("index:ECMBusinessConsultantDate")}</span>
                         <p class="description">
-                            Consulting in the scope of office digitization and getting rid of paper processes in companies. Digitization includes automatic extraction of data from documents, integration with
-                            internal systems customer and possibly also the introduction of new systems, such as the document management systems (DMS. Use of agile methodologies, but also of waterfall. Close
-                            cooperation with the customer and internal teams, such as the development department, when creating development assignments and business analyses. Consulting also includes customer
-                            training for working with new implemented systems.
+                            {t("index:ECMBusinessConsultantDescription")}
                         </p>
                     </div>
                     <div class="meta">
                         <p class="title">Analyst, Shared Services</p>
                         <p>MONETA Money Bank a.s.</p>
-                        <span class="date">September 2018 - March 2020</span>
+                        <span class="date">{t("index:MonetaAnalystDate")}</span>
                         <p class="description">
-                            Creating reports using tools such as Microsoft Excel, SQL (Oracle), Microsoft Access, PowerBI and SAS BI. Part of the job also was creating process analysis for commercial (SMB)
-                            backoffice, with a focus on the RWA (risk-weighted asset) commercial process.
+                            {t("index:MonetaAnalystDescription")}
                         </p>
                     </div>
                     <div class="meta">
                         <p class="title">Administrator End User Services, IT</p>
                         <p>MONETA Money Bank a.s.</p>
-                        <span class="date">July 2017 - August 2018</span>
+                        <span class="date">{t("index:MonetaEndUserServicesDate")}</span>
                         <p class="description">
-                            Support of internal end users by phone, email and other channels. Working with the ticketing system, escalating important issues and also a bit of programming. Here I gradually
-                            started to learn mainly VBScript with macros in Microsoft Excel.
+                            {t("index:MonetaEndUserServicesDescription")}
                         </p>
                     </div>
                     <div class="meta">
                         <p class="title">Motherboard technician</p>
                         <p>ASUS Czech Service s.r.o.</p>
-                        <span class="date">October 2014 - April 2017</span>
-                        <p class="description">Repairing motherboards of all kinds on micro level. Soldering, measuring (with oscilloscope), and of course reading in motherboard schematics.</p>
+                        <span class="date">{t("index:AsusTechnicianDate")}</span>
+                        <p class="description">
+                            {t("index:AsusTechnicianDescription")}
+                        </p>
                     </div>
                 </div>
                 <div class="timeline-card">
-                    <h3>Education</h3>
+                    <h3>{t("index:SectionEducation")}</h3>
                     <div class="meta">
-                        <p class="title">High School of Electrical Engineering Ostrava, Na Jízdárně</p>
-                        <p>GCE Advanced Level</p>
+                        <p class="title">{t("index:HighSchoolNaJizdarne")}</p>
+                        <p>{t("index:MaturityDiploma")}</p>
                         <span class="date">2010 - 2014</span>
-                        <p class="description">Mechanical and electrical engineering - computer and security systems</p>
+                        <p class="description">{t("index:HighSchoolNaJizdarneDescription")}</p>
                     </div>
                 </div>
             </section>
@@ -340,10 +321,8 @@ import LanguageSelector from "../components/LanguageSelector.astro";
     </div>
     <!-- Footer -->
     <footer class="footer-container">
-        <p>Created by: Dalibor Hon</p>
-        <p>Hosted with ❤️ by <a href="https://www.github.com">GitHub</a>. Built with <a href="https://astro.build/"><span class="svg-astro"></span></a>.</p>
-        <p>Original design by <a href="https://newtodesign.com/minimal-html-css-resume-template/">New to design</a>.</p>
+        <p>{t("footer:PageCreatedBy")}</p>
+        <p><Fragment set:html={t("footer:Host")}/></p>
+        <p><Fragment set:html={t("footer:Design")}/></p>
     </footer>
 </Layout>
-
-<style></style>
