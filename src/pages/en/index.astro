@@ -12,6 +12,7 @@ changeLanguage("en");
     <div class="page-wrapper">
         <div class="header-container">
             <header>
+                <p>{`${t("shared:NamePossesive")} ${t("shared:Resume")}`}</p>
                 <LanguageSelector showFlag={true}/>
                 <ThemeToggle/>
             </header>
@@ -38,7 +39,7 @@ changeLanguage("en");
                 </div>
 
                 <!-- Achievements -->
-                <section class="skill-cards-container">
+                <section class="skill-cards-container pagebreak">
                     <div class="skill-card">
                         <div class="skill">
                             <div class="skill-level">
@@ -107,7 +108,7 @@ changeLanguage("en");
                 </section>
             </div>
             <!-- Skills section -->
-            <h2 class="section-title">{t("index:SectionSkills")}</h2>
+            <h2 class="section-title pagebreak">{t("index:SectionSkills")}</h2>
             <section class="skills">
                 <p>
                     {t("index:SkillsIntroduction")}
@@ -233,7 +234,7 @@ changeLanguage("en");
             </section>
 
             <!-- Certifications section -->
-            <h2 class="section-title">{t("index:SectionCertifications")}</h2>
+            <h2 class="section-title pagebreak">{t("index:SectionCertifications")}</h2>
             <section class="certifications">
                 <div class="list-card certifications">
                     <ul class="fa-ul">
@@ -308,7 +309,7 @@ changeLanguage("en");
                         </p>
                     </div>
                 </div>
-                <div class="timeline-card">
+                <div class="timeline-card pagebreak">
                     <h3>{t("index:SectionEducation")}</h3>
                     <div class="meta">
                         <p class="title">{t("index:HighSchoolNaJizdarne")}</p>
