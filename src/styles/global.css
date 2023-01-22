@@ -141,7 +141,6 @@ body {
     font-weight: 400;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    font-size: 16px;
     background-color: var(--body-bg);
     color: var(--gray-blue);
     scroll-behavior: smooth;
@@ -162,7 +161,7 @@ a:hover {
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--gray-blue-dark);
     line-height: 26px;
@@ -185,7 +184,6 @@ h2 {
 }
 
 p {
-    font-size: 1rem;
     /* color: var(--gray-blue); */
     line-height: 22px;
 }

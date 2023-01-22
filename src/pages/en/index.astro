@@ -2,8 +2,8 @@
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/styles.css";
 import LanguageSelector from "../../components/LanguageSelector.astro";
-import DarkModeToggle from "../../components/DarkModeToggle.astro";
 import i18next, { t, changeLanguage } from "i18next";
+import ThemeToggle from "../../components/ThemeToggle.astro";
 
 changeLanguage("en");
 ---
@@ -12,8 +12,8 @@ changeLanguage("en");
     <div class="page-wrapper">
         <div class="header-container">
             <header>
-                <DarkModeToggle />
                 <LanguageSelector showFlag={true}/>
+                <ThemeToggle/>
             </header>
         </div>
         <main class="main-grid">
@@ -106,7 +106,6 @@ changeLanguage("en");
                     </div>
                 </section>
             </div>
-            <hr class="spacer" />
             <!-- Skills section -->
             <h2 class="section-title">{t("index:SectionSkills")}</h2>
             <section class="skills">

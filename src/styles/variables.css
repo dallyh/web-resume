@@ -13,8 +13,8 @@ html,
     --accent-color-light: #48a4d2;
     --accent-color: #4a90e2;
     --gray-blue-dark: #5b6a9a;
-    --slider-bg: #dddddd;
-    --slider-bg-before: #fff;
+    --slider-bg: var(--light);
+    --slider-bg-before: var(--accent-color);
     --light-gray: rgb(189, 189, 189);
     --img-profile-border: var(--calypso);
     --button-color: var(--gray-blue);
@@ -36,8 +36,8 @@ html[data-theme="dark"] ::before {
     --accent-color-light: #4a90e2;
     --gray-blue-dark: #3998eb; /* H3 color */
     --slider-bg: #dddddd;
-    --slider-bg-before: #fff;
-    --slider-input-bg: var(--accent-color-light);
+    --slider-bg-before: var(--accent-color);
+    --slider-input-bg: var(--light);
     --light-gray: rgb(189, 189, 189);
     --img-profile-border: var(--accent-color);
     --button-hover-color: var(--gray-blue-light);

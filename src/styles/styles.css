@@ -3,7 +3,6 @@
     max-width: 1100px;
     height: auto;
     margin: 0px auto;
-    padding: 0rem 1rem 0rem 1rem;
     display: grid;
     grid-template-rows: repeat(2, max-content);
 }
@@ -14,6 +13,7 @@
     gap: 0.5rem;
     grid-row: 1 / 2;
     grid-column: 1;
+    padding: 0rem 1rem 0rem 1rem;
 }
 
 /* Header */
@@ -25,9 +25,9 @@
     justify-content: flex-end;
     margin-top: 5px;
     margin-bottom: 5px;
-    height: max-content;
     grid-row: 1 / 2;
     grid-column: 1;
+    height: max-content;
 }
 
 .header-container .button {
@@ -37,6 +37,7 @@
 header {
     display: flex;
     gap: 1rem;
+    justify-content: flex-end;
     height: 40px;
     min-width: 150px;
     padding: 1rem;
@@ -44,6 +45,10 @@ header {
     border-radius: 10px;
     border: 1px solid var(--accent-color);
     transition: transform 300ms;
+}
+
+header p {
+    display: none;
 }
 
 header.hidden {
@@ -55,8 +60,8 @@ header.hidden {
     display: grid;
     min-height: 100vh;
     gap: 1rem;
-    grid-template-rows: repeat(2, min-content);
-    padding-top: 1.5rem;
+    grid-template-rows: min-content 1fr;
+    padding: 1.5rem 0 1.5rem 0;
 }
 
 .hero {
@@ -72,8 +77,8 @@ header.hidden {
 }
 
 .img-profile {
-    width: 96px;
-    height: 100px;
+    width: 7rem;
+    height: 95%;
     border-radius: 50%;
     border: solid 2px var(--img-profile-border);
     transition: all 300ms;
@@ -101,18 +106,9 @@ header.hidden {
 }
 
 .social .button {
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin-right: 0.2rem;
+    margin-bottom: 0.2rem;
     min-width: 250px;
-    width: 250px;
-}
-
-.email {
-    display: block;
-    font-size: 24px;
-    font-weight: 300;
-    color: var(--gray-blue);
-    margin-top: 10px;
 }
 
 .lead {
@@ -126,6 +122,10 @@ header.hidden {
 .section-title {
     font-size: 2rem;
     font-weight: 600;
+}
+
+.main-grid > .section-title:not(:first-of-type)
+{
     padding: 1rem 0 0 0;
 }
 
@@ -157,7 +157,6 @@ header.hidden {
 }
 
 .list-card.exp .exp-description span {
-    font-size: 16px;
     color: var(--gray-blue);
     line-height: 22px;
 }
@@ -168,7 +167,6 @@ header.hidden {
 .list-card .software-experience li {
     list-style: circle;
     margin-left: 1rem;
-    font-size: 16px;
     line-height: 22px;
 }
 
@@ -183,7 +181,6 @@ header.hidden {
 }
 
 .list-card.certifications ul li {
-    font-size: 16px;
     color: var(--gray-blue);
     line-height: 22px;
 }
@@ -217,7 +214,7 @@ header.hidden {
 .skill-cards-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: 190px 300px;
+    grid-template-rows: 0.8fr 1fr;
     gap: 1rem;
     transition: all ease-in-out 400ms;
     position: relative;
@@ -268,18 +265,18 @@ header.hidden {
 
 .skill-level {
     display: inline-block;
-    max-width: 160px;
+    max-width: 190px;
 }
 
 .skill-level span {
-    font-size: 35px;
+    font-size: 2rem;
     font-weight: 300;
     color: var(--gray-blue-dark);
     vertical-align: top;
 }
 
 .skill-level h2 {
-    font-size: 95px;
+    font-size: 5rem;
     font-weight: 300;
     display: inline-block;
     vertical-align: top;
@@ -292,11 +289,14 @@ header.hidden {
     vertical-align: top;
     display: inline-block;
     max-width: 450px;
+}
+
+.skill-cards-container > .skill-card:is(:first-of-type) .skill-meta {
     margin-left: 15px;
 }
 
 .skill-meta h3 {
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 800;
     color: var(--gray-blue-dark);
     margin-bottom: 5px;
@@ -305,7 +305,6 @@ header.hidden {
 .skill-meta span {
     color: var(--gray-blue);
     line-height: 20px;
-    font-size: 16px;
 }
 
 .skill-details {
@@ -353,7 +352,7 @@ header.hidden {
 }
 
 .timeline-card > .header {
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 15px;
 }
@@ -366,8 +365,8 @@ header.hidden {
     position: absolute;
     width: 2px;
     height: calc(100% + 25px);
-    left: 0.275rem;
-    top: 1.275rem;
+    left: 0;
+    top: 20px;
     background-color: var(--calypso);
     transform: scaleY(0);
 }
@@ -384,31 +383,31 @@ header.hidden {
     position: relative;
     font-weight: normal;
     max-width: 95%;
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: 600;
     line-height: 25px;
     color: var(--gray-blue-dark);
 }
 .timeline-card > .meta > .title::before {
     content: "";
-    top: 19px;
-    left: -15px;
+    top: 15px;
+    left: calc(-4px - 1rem);
     display: block;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 10px;
     background: var(--accent-color);
     position: absolute;
 }
 
 .timeline-card > .meta > .date {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: var(--gray-blue);
     font-weight: 300;
 }
 
 .timeline-card > .meta > .description {
-    font-size: 16px;
+    font-size: 0.9rem;
     color: var(--gray-blue);
     font-weight: 400;
     margin-top: 1rem;
@@ -441,7 +440,7 @@ header.hidden {
 }
 
 .footer-container p {
-    font-size: 12px;
+    font-size: 0.8rem;
     color: var(--gray-blue);
     font-weight: 300;
 }
@@ -450,6 +449,49 @@ header.hidden {
 @media (max-width: 768px) {
     .profile {
         display: block;
+    }
+
+    .header-container {
+        position: sticky;
+        top: 0px;
+        display: flex;
+        z-index: 9999;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: max-content;
+        width: 100%;
+        grid-area: auto;
+    }
+    
+    .header-container .button {
+        border-radius: 34px;
+    }
+    
+    header {
+        height: 38px;
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 0;
+        border: unset;
+        border-bottom: 1px solid var(--accent-color-light);
+    }
+
+    header p {
+        margin-right: auto;
+        color: var(--accent-color);
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: initial;
+    }
+
+    .main-grid {
+        grid-area: auto;
+    }
+
+    .img-profile {
+        width: 165px;
+        height: 168px;
+        margin-bottom: 1rem;
     }
 
     .lead {
@@ -510,8 +552,8 @@ header.hidden {
         padding: 0.5rem;
     }
 
-    .skill-meta {
-        margin-left: 0;
+    .skill-cards-container > .skill-card:is(:first-of-type) .skill-meta {
+        margin-left: 0px;
     }
 }
 
@@ -549,10 +591,6 @@ header.hidden {
     }
 
     .social > .button {
-        display: none;
-    }
-
-    .spacer {
         display: none;
     }
 
