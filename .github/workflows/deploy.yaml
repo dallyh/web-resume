@@ -16,7 +16,9 @@ permissions:
 
 jobs:
     build:
-        runs-on: ubuntu-latest       
+        runs-on: ubuntu-latest
+        env:
+            UNDER_CONSTRUCTION: ${{ vars.UNDER_CONSTRUCTION }}       
         steps:
             - name: Check if page is under construction
               if: ${{ vars.UNDER_CONSTRUCTION == 'true' }}
@@ -24,8 +26,6 @@ jobs:
             - name: Checkout your repository using git
               uses: actions/checkout@v2
             - name: Install, build, and upload your site
-              env:
-                UNDER_CONSTRUCTION: ${{ vars.UNDER_CONSTRUCTION }}
               uses: withastro/action@v0
 
     deploy:
