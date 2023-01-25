@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const { title } = Astro.props;
-const underConstruction = process.env.UNDER_CONSTRUCTION;
+const underConstruction = import.meta.env.UNDER_CONSTRUCTION;
 ---
 
 <!DOCTYPE html>
