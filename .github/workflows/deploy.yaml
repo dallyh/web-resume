@@ -20,9 +20,10 @@ jobs:
         env:
             UNDER_CONSTRUCTION: ${{ vars.UNDER_CONSTRUCTION }}       
         steps:
-            - name: Check if page is under construction
-              if: ${{ vars.UNDER_CONSTRUCTION == 'true' }}
-              run: echo "Site is currently under construction."
+            - name: Print out under construction variables
+              run: |
+                echo "Repository variable : ${{ vars.UNDER_CONSTRUCTION }}"
+                echo "Environment variable : ${{ env.UNDER_CONSTRUCTION }}"
             - name: Checkout your repository using git
               uses: actions/checkout@v2
             - name: Install, build, and upload your site
