@@ -1,14 +1,16 @@
 ---
-import LanguageSelectDialog from '../components/LanguageSelectDialog.astro';
-import ModalDialog from '../components/ModalDialog.astro';
+import LanguageSelectDialog from "../components/LanguageSelectDialog.astro";
+import ModalDialog from "../components/ModalDialog.astro";
 import { t } from "i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
+import "../styles/global.css";
 
 export interface Props {
     title: string;
 }
 
 const { title } = Astro.props;
+const underConstruction = process.env.UNDER_CONSTRUCTION;
 ---
 
 <!DOCTYPE html>
@@ -18,7 +20,7 @@ const { title } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <meta name="description" content={t("shared:Description")}/>
+        <meta name="description" content={t("shared:Description")} />
         <link rel="alternate" hreflang="x-default" href={Astro.url.origin} />
         <HeadHrefLangs />
         <title>{title}</title>
@@ -33,7 +35,7 @@ const { title } = Astro.props;
             referrerPolicy="no-referrer"
         />
         <!-- Prevent FOUC -->
-        <script src="/scripts/ThemeToggle.js" is:inline />
+        <script src="/scripts/ThemeToggle.js" is:inline></script>
         <script is:inline>
             window.__matchMediaScheme();
         </script>
@@ -43,30 +45,28 @@ const { title } = Astro.props;
             polyfillCountryFlagEmojis();
         </script>
         <!-- Adobe Muli font -->
-        <link rel="preload" href="https://use.typekit.net/bxg2com.css" as="stylesheet" />
-        <link rel="stylesheet" href="https://use.typekit.net/bxg2com.css"/>
+        <link rel="preload" href="https://use.typekit.net/bxg2com.css" as="style" />
+        <link rel="stylesheet" href="https://use.typekit.net/bxg2com.css" />
     </head>
     <body>
-        <!-- 
-        <ModalDialog dialogId="underConstruction" modalTitle="Site under construction" openDialog={true} closeButtonText={"Close"} openOnce={true}>
-            <div slot="body">
-                <p>Site is currently under construction and work in progress. Expect random crawling bugs.</p>
-            </div>
-        </ModalDialog>
-        -->
-        <LanguageSelectDialog/>
+        {
+            underConstruction == "true" && (
+                <ModalDialog dialogId="underConstruction" modalTitle="Site under construction" openDialog={true} closeButtonText={"Close"} openOnce={true}>
+                    <div slot="body">
+                        <p>Site is currently under construction and work in progress. Expect random crawling bugs.</p>
+                    </div>
+                </ModalDialog>
+            )
+        }
+        <LanguageSelectDialog />
         <slot />
-    </body>
-</html>
-<script>
-    import {InitializeTooltips} from "../scripts/tooltips"
-    import "../scripts/counters";
-    import "../scripts/timeline";
-    import "../scripts/header";
-    import "../scripts/skillcard"
+    </body><script>
+        import { InitializeTooltips } from "../scripts/tooltips";
+        import "../scripts/counters";
+        import "../scripts/timeline";
+        import "../scripts/header";
+        import "../scripts/skillcard";
 
-    InitializeTooltips();
-</script>
-<style is:global>
-    @import "../styles/global.css";
-</style>
+        InitializeTooltips();
+    </script>
+</html>
