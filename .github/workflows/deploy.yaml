@@ -19,8 +19,6 @@ jobs:
         runs-on: ubuntu-latest       
         steps:
             - name: Check if page is under construction
-              if: ${{ vars.UNDER_CONSTRUCTION == 'false' }}
-              run: echo "Site is currently not under construction."
               if: ${{ vars.UNDER_CONSTRUCTION == 'true' }}
               run: echo "Site is currently under construction."
             - name: Checkout your repository using git
