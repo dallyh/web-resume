@@ -35,8 +35,26 @@ let observer = new IntersectionObserver((entires, observer) => {
 }, observerOptions);
 
 if (counters) {
-    counters.forEach((element) => {
-        observer.observe(element);
+    setTimeout(() => {
+        // Check for open dialogs
+        const dialogs = document.querySelectorAll("dialog");
+        let isDialogOpen = false;
+        dialogs.forEach((dialog) => {
+            if (dialog.open) {
+                isDialogOpen = true;
+                dialog.addEventListener("close", () => {
+                    counters.forEach((element) => {
+                        observer.observe(element);
+                    });
+                });
+            }
+        });
+
+        if (isDialogOpen == false) {
+            counters.forEach((element) => {
+                observer.observe(element);
+            });
+        }
     });
 }
 
