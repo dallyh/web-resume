@@ -556,7 +556,19 @@ header.hidden {
 }
 
 /* Print styles */
+.print {
+    display: none !important;
+}
+
 @media print {
+    .noprint {
+        display: none !important;
+    }
+
+    .print {
+        display: initial !important;
+    }
+
     .header-container {
         display: none;
     }
