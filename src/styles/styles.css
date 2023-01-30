@@ -124,8 +124,7 @@ header.hidden {
     font-weight: 600;
 }
 
-.main-grid > .section-title:not(:first-of-type)
-{
+.main-grid > .section-title:not(:first-of-type) {
     padding: 1rem 0 0 0;
 }
 
@@ -449,6 +448,10 @@ header.hidden {
         display: block;
     }
 
+    .img-profile:hover {
+        transform: unset;
+    }
+
     .header-container {
         position: sticky;
         top: 0px;
@@ -460,26 +463,27 @@ header.hidden {
         width: 100%;
         grid-area: auto;
     }
-    
+
     .header-container .button {
         border-radius: 34px;
     }
-    
+
     header {
         height: 38px;
         width: 100%;
         padding: 0.75rem;
         border-radius: 0;
         border: unset;
-        border-bottom: 1px solid var(--accent-color-light);
+        box-shadow: 0px 0.5px 6px 0px rgba(0, 0, 0, 0.2);
     }
 
     header p {
         margin-right: auto;
         color: var(--accent-color);
         font-size: 1.2rem;
-        font-weight: 600;
+        font-weight: 400;
         display: initial;
+        align-self: center;
     }
 
     .main-grid {
