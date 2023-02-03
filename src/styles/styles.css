@@ -196,7 +196,7 @@ header.hidden {
 .dev-list-inline .dev-list-inline-item {
     padding: 0.5rem 0 0.5rem 0;
     font-size: 3rem;
-    transition: 300ms;
+    transition: all 300ms;
     padding: 0;
     color: var(--dev-icon-color);
 }
@@ -216,7 +216,6 @@ header.hidden {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: 0.8fr 1fr;
     gap: 1rem;
-    transition: all ease-in-out 400ms;
     position: relative;
 }
 
@@ -230,7 +229,7 @@ header.hidden {
     padding: 2rem;
     width: 100%;
     height: 100%;
-    transition: all 0.4s;
+    transition: transform ease-in-out 300ms, background-color ease-in-out 300ms;
 }
 
 .skill-cards-container .skill-card:nth-child(1) {

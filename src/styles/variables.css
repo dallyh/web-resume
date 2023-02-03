@@ -6,6 +6,7 @@ html,
     --body-color-light: #d9e7f8;
     --button-bg: var(--body-color-light);
     --button-color: var(--accent-color);
+    --button-hover-color: var(--h3-color);
     --skill-card-bg: #eef0f7;
     --skill-card-hover: #fff;
     --body-bg: #fefefe;
@@ -16,8 +17,7 @@ html,
     --slider-bg-before: var(--accent-color);
     --skill-card-bg-gray: rgb(189, 189, 189);
     --img-profile-border: var(--calypso);
-    --button-color: var(--body-color);
-    --button-hover-color: var(--h3-color);
+
 }
 
 html[data-theme="dark"],
@@ -50,6 +50,7 @@ html[data-theme="dark"] ::before {
         --body-color-light: #d9e7f8;
         --button-bg: var(--body-color-light);
         --button-color: var(--accent-color);
+        --button-hover-color: var(--h3-color);
         --skill-card-bg: #eef0f7;
         --skill-card-hover: #fff;
         --body-bg: #fefefe;
@@ -60,7 +61,5 @@ html[data-theme="dark"] ::before {
         --slider-bg-before: var(--accent-color);
         --skill-card-bg-gray: rgb(189, 189, 189);
         --img-profile-border: var(--calypso);
-        --button-color: var(--body-color);
-        --button-hover-color: var(--h3-color);
     }
 }
