@@ -1,0 +1,58 @@
+/* Print styles */
+.print {
+    display: none !important;
+}
+
+@media print {
+    .noprint {
+        display: none !important;
+    }
+
+    .print {
+        display: initial !important;
+    }
+
+    .header-container {
+        display: none;
+    }
+
+    .img-profile {
+        width: 196px;
+        height: 198px;
+        margin-bottom: 25px;
+    }
+
+    .skill-cards-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skill-card {
+        align-items: flex-start;
+    }
+
+    .skill-details {
+        display: block;
+    }
+
+    .pagebreak {
+        page-break-before: always;
+    }
+
+    .skill-click {
+        display: none;
+    }
+
+    .social > .button {
+        display: none;
+    }
+
+    .timeline > .timeline-card .meta::before {
+        animation: none;
+        transform: scaleY(1);
+    }
+
+    .footer-container {
+        display: none;
+    }
+}

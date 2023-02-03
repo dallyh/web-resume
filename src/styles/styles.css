@@ -41,7 +41,7 @@ header {
     height: 40px;
     min-width: 150px;
     padding: 1rem;
-    background-color: var(--light);
+    background-color: var(--skill-card-bg);
     border-radius: 10px;
     border: 1px solid var(--accent-color);
     transition: transform 300ms;
@@ -156,8 +156,9 @@ header.hidden {
 }
 
 .list-card.exp .exp-description span {
-    color: var(--gray-blue);
+    color: var(--body-color);
     line-height: 22px;
+    font-weight: inherit;
 }
 
 .list-card p {
@@ -180,7 +181,7 @@ header.hidden {
 }
 
 .list-card.certifications ul li {
-    color: var(--gray-blue);
+    color: var(--body-color);
     line-height: 22px;
 }
 
@@ -197,12 +198,12 @@ header.hidden {
     font-size: 3rem;
     transition: 300ms;
     padding: 0;
-    color: var(--gray-blue);
+    color: var(--dev-icon-color);
 }
 
 .dev-list-inline .dev-list-inline-item:hover {
     transform: scale(1.05);
-    color: var(--accent-color-light);
+    color: var(--accent-color);
     text-shadow: 0px 0px 2px rgb(0, 0, 0, 0.3);
     cursor: pointer;
 }
@@ -223,15 +224,13 @@ header.hidden {
     display: grid;
     grid-template-rows: 1fr min-content;
     justify-content: center;
-    /* display: flex;
-    align-items: center;
-    flex-direction: column; */
     gap: 1rem;
-    background-color: var(--light);
+    background-color: var(--skill-card-bg);
     border-radius: 10px;
     padding: 2rem;
     width: 100%;
     height: 100%;
+    transition: all 0.4s;
 }
 
 .skill-cards-container .skill-card:nth-child(1) {
@@ -257,7 +256,7 @@ header.hidden {
 .skill-card:hover {
     transform: scale(1.05);
     background-color: var(--skill-card-hover);
-    box-shadow: 0px 5px 50px -8px var(--light);
+    box-shadow: 0px 5px 50px -8px var(--skill-card-bg);
     cursor: pointer;
 }
 
@@ -269,7 +268,7 @@ header.hidden {
 .skill-level span {
     font-size: 2rem;
     font-weight: 300;
-    color: var(--gray-blue-dark);
+    color: var(--h3-color);
     vertical-align: top;
 }
 
@@ -278,7 +277,7 @@ header.hidden {
     font-weight: 300;
     display: inline-block;
     vertical-align: top;
-    color: var(--gray-blue-dark);
+    color: var(--h3-color);
     letter-spacing: -5px;
 }
 
@@ -295,12 +294,12 @@ header.hidden {
 .skill-meta h3 {
     font-size: 1.2rem;
     font-weight: 800;
-    color: var(--gray-blue-dark);
+    color: var(--h3-color);
     margin-bottom: 5px;
 }
 
 .skill-meta span {
-    color: var(--gray-blue);
+    color: var(--body-color);
     line-height: 20px;
 }
 
@@ -383,7 +382,7 @@ header.hidden {
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 25px;
-    color: var(--gray-blue-dark);
+    color: var(--h3-color);
 }
 .timeline-card > .meta > .title::before {
     content: "";
@@ -399,13 +398,13 @@ header.hidden {
 
 .timeline-card > .meta > .date {
     font-size: 0.9rem;
-    color: var(--gray-blue);
+    color: var(--body-color);
     font-weight: 300;
 }
 
 .timeline-card > .meta > .description {
     font-size: 0.9rem;
-    color: var(--gray-blue);
+    color: var(--body-color);
     font-weight: 400;
     margin-top: 1rem;
 }
@@ -438,7 +437,7 @@ header.hidden {
 
 .footer-container p {
     font-size: 0.8rem;
-    color: var(--gray-blue);
+    color: var(--body-color);
     font-weight: 300;
 }
 
@@ -556,85 +555,5 @@ header.hidden {
 
     .skill-cards-container > .skill-card:is(:first-of-type) .skill-meta {
         margin-left: 0px;
-    }
-}
-
-/* Print styles */
-.print {
-    display: none !important;
-}
-
-@media print {
-    .noprint {
-        display: none !important;
-    }
-
-    .print {
-        display: initial !important;
-    }
-
-    .header-container {
-        display: none;
-    }
-
-    .img-profile {
-        width: 196px;
-        height: 198px;
-        margin-bottom: 25px;
-    }
-
-    .skill-cards-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .skill-card {
-        align-items: flex-start;
-    }
-
-    .skill-details {
-        display: block;
-    }
-
-    .pagebreak {
-        page-break-before: always;
-    }
-
-    .skill-click {
-        display: none;
-    }
-
-    .social > .button {
-        display: none;
-    }
-
-    .timeline > .timeline-card .meta::before {
-        animation: none;
-        transform: scaleY(1);
-    }
-
-    .footer-container {
-        display: none;
-    }
-}
-
-/* Keyframes */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes scaleDown {
-    from {
-        transform: scaleY(0);
-    }
-
-    to {
-        transform: scaleY(1);
     }
 }

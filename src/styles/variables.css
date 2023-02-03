@@ -1,69 +1,66 @@
 html,
 ::after,
 ::before {
-    --gray-blue: #81899c;
-    --gray-blue-light: #d9e7f8;
-    --button-bg: var(--gray-blue-light); /* Button color */
+    --body-color: #32353b;
+    --dev-icon-color: #81899c;
+    --body-color-light: #d9e7f8;
+    --button-bg: var(--body-color-light);
     --button-color: var(--accent-color);
-    --light: #eef0f7;
+    --skill-card-bg: #eef0f7;
     --skill-card-hover: #fff;
     --body-bg: #fefefe;
-    --dark-blue: #04143a;
-    --calypso: #31708f;
-    --accent-color-light: #48a4d2;
+    --calypso: #31708f; /* Timeline line color */
     --accent-color: #4a90e2;
-    --gray-blue-dark: #5b6a9a;
-    --slider-bg: var(--light);
+    --h3-color: #5b6a9a;
+    --slider-bg: var(--skill-card-bg);
     --slider-bg-before: var(--accent-color);
-    --light-gray: rgb(189, 189, 189);
+    --skill-card-bg-gray: rgb(189, 189, 189);
     --img-profile-border: var(--calypso);
-    --button-color: var(--gray-blue);
-    --button-hover-color: var(--gray-blue-dark);
+    --button-color: var(--body-color);
+    --button-hover-color: var(--h3-color);
 }
 
 html[data-theme="dark"],
 html[data-theme="dark"] ::after,
 html[data-theme="dark"] ::before {
-    --gray-blue: #9ea7bd; /* Body color - used for H2 */
-    --button-bg: #587faf; /* Button color */
+    --body-color: #d2d6e0;
+    --dev-icon-color: #96a1bb;
+    --button-bg: #587faf;
     --button-color: var(--slider-bg);
-    --light: #4b5162; /* Skill card color */
+    --skill-card-bg: #3E4042; /* Skill card color */
     --skill-card-hover: var(--body-bg);
-    --body-bg: #383c4a;
-    --dark-blue: #04143a;
-    --calypso: #31708f; /* Timeline line color */
-    --accent-color: #48a4d2; /* Light accent, used for theme switcher */
-    --accent-color-light: #4a90e2;
-    --gray-blue-dark: #3998eb; /* H3 color */
+    --body-bg: #232527;
+    --calypso: #31708f;
+    --accent-color: #4a90e2;
+    --h3-color: #3998eb;
     --slider-bg: #dddddd;
     --slider-bg-before: var(--accent-color);
-    --slider-input-bg: var(--light);
-    --light-gray: rgb(189, 189, 189);
+    --slider-input-bg: var(--skill-card-bg);
+    --skill-card-bg-gray: rgb(189, 189, 189);
     --img-profile-border: var(--accent-color);
-    --button-hover-color: var(--gray-blue-light);
+    --button-hover-color: var(--body-color-light);
 }
 
 @media print {
     html[data-theme="dark"],
     html[data-theme="dark"] ::after,
     html[data-theme="dark"] ::before {
-        --gray-blue: #81899c;
-        --gray-blue-light: #d9e7f8;
-        --button-bg: var(--gray-blue-light); /* Button color */
+        --body-color: #32353b;
+        --dev-icon-color: #81899c;
+        --body-color-light: #d9e7f8;
+        --button-bg: var(--body-color-light);
         --button-color: var(--accent-color);
-        --light: #eef0f7;
+        --skill-card-bg: #eef0f7;
         --skill-card-hover: #fff;
         --body-bg: #fefefe;
-        --dark-blue: #04143a;
-        --calypso: #31708f;
-        --accent-color-light: #48a4d2;
+        --calypso: #31708f; /* Timeline line color */
         --accent-color: #4a90e2;
-        --gray-blue-dark: #5b6a9a;
-        --slider-bg: #dddddd;
-        --slider-bg-before: #fff;
-        --light-gray: rgb(189, 189, 189);
+        --h3-color: #5b6a9a;
+        --slider-bg: var(--skill-card-bg);
+        --slider-bg-before: var(--accent-color);
+        --skill-card-bg-gray: rgb(189, 189, 189);
         --img-profile-border: var(--calypso);
-        --button-color: var(--gray-blue);
-        --button-hover-color: var(--gray-blue-dark);
+        --button-color: var(--body-color);
+        --button-hover-color: var(--h3-color);
     }
 }
