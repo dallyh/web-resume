@@ -6,6 +6,7 @@ import "../styles/print.css";
 import LanguageSelector from "../components/LanguageSelector.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import ThemeToggle from "../components/ThemeToggle.astro";
+import ThemeToggleTest from "../components/ThemeToggleTest.astro";
 
 changeLanguage("cs");
 ---
@@ -15,8 +16,9 @@ changeLanguage("cs");
         <div class="header-container">
             <header>
                 <p>{`${t("shared:NamePossesive")} ${t("shared:Resume")}`}</p>
+                <ThemeToggleTest/>
                 <LanguageSelector showFlag={true}/>
-                <ThemeToggle/>
+                <!-- <ThemeToggle/> -->
             </header>
         </div>
         <main class="main-grid">
@@ -34,7 +36,12 @@ changeLanguage("cs");
                     </div>
                     <div class="social">
                         <button class="button" onclick="window.print()"><a href="#">{t("shared:DownloadResume")}</a></button>
-                        <button class="button"><a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">LinkedIn</a></button>
+                        <a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">
+                            <button class="button">
+                                <i class="fa-brands fa-linkedin"></i> 
+                                LinkedIn
+                            </button>
+                        </a>
                     </div>
                     <h2 class="lead">{t("index:Lead")}</h2>
                     <p class="about-me">{t("index:AboutIntroduction")}</p>

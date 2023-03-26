@@ -446,6 +446,12 @@ header.hidden {
         display: block;
     }
 
+    .social .button {
+        margin-right: 0.2rem;
+        margin-bottom: 0.2rem;
+        min-width: unset;
+    }
+
     .img-profile:hover {
         transform: unset;
     }
@@ -492,6 +498,7 @@ header.hidden {
         width: 165px;
         height: 168px;
         margin-bottom: 1rem;
+        transition: none;
     }
 
     .lead {
