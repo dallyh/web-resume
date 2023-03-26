@@ -1,10 +1,10 @@
 // Credit: https://stackoverflow.com/questions/63902512/js-show-hide-header-on-scroll-effect-but-only-after-the-header-has-scrolled
 
 var prevScrollpos = window.pageYOffset;
-var headerDiv = <HTMLElement>document.querySelector("header");
+var headerDiv = <HTMLElement>document.querySelector(".header-container");
 
 const HideHeader = () => {
-    var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+    //var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
     window.onscroll = function () {
         var currentScrollPos = window.pageYOffset;
 

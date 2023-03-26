@@ -17,6 +17,9 @@ html,
     --slider-bg-before: var(--accent-color);
     --skill-card-bg-gray: rgb(189, 189, 189);
     --img-profile-border: var(--calypso);
+    --skill-card-hover-radial-color: rgba(91, 106, 154, 0.2);
+    --skill-card-hover-shadow: rgba(0, 0, 0, 0.5);
+    --skill-card-border-color: rgba(0, 0, 0, 0.2);
 
 }
 
@@ -39,6 +42,9 @@ html[data-theme="dark"] ::before {
     --skill-card-bg-gray: rgb(189, 189, 189);
     --img-profile-border: var(--accent-color);
     --button-hover-color: var(--body-color-light);
+    --skill-card-hover-radial-color: rgba(255, 255, 255, 0.06);
+    --skill-card-hover-shadow: #3E4042;
+    --skill-card-border-color: rgba(255, 255, 255, 0.1);
 }
 
 @media print {

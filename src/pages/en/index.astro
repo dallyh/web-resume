@@ -15,8 +15,8 @@ changeLanguage("en");
         <div class="header-container">
             <header>
                 <p>{`${t("shared:NamePossesive")} ${t("shared:Resume")}`}</p>
-                <LanguageSelector showFlag={true}/>
                 <ThemeToggle/>
+                <LanguageSelector showFlag={true}/>
             </header>
         </div>
         <main class="main-grid">
@@ -24,7 +24,7 @@ changeLanguage("en");
                 <!-- Introduction -->
                 <div class="hero">
                     <div class="profile">
-                        <img class="img-profile" src="/assets/img/profile.png" alt="Profile picture"/>
+                        <img class="img-profile" tabindex="0" src="/assets/img/profile.png" alt="Profile picture"/>
                         <div class="name">
                             <h1 class="name-header">
                                 <strong>Dalibor</strong> Hon
@@ -33,8 +33,13 @@ changeLanguage("en");
                         </div>
                     </div>
                     <div class="social">
-                        <button class="button" onclick="window.print()"><a href="#">{t("shared:DownloadResume")}</a></button>
-                        <button class="button"><a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">LinkedIn</a></button>
+                        <button class="button" onclick="window.print()">{t("shared:DownloadResume")}</button>
+                        <a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">
+                            <button tabindex="-1" class="button">
+                                <i class="fa-brands fa-linkedin"></i> 
+                                LinkedIn
+                            </button>
+                        </a>
                     </div>
                     <h2 class="lead">{t("index:Lead")}</h2>
                     <p class="about-me">{t("index:AboutIntroduction")}</p>
@@ -42,12 +47,13 @@ changeLanguage("en");
 
                 <!-- Achievements -->
                 <section class="skill-cards-container pagebreak">
-                    <div class="skill-card">
+                    <div class="skill-card" tabindex="0">
                         <div class="skill">
                             <div class="skill-level">
-                                <span>+</span>
+                                
                                 <h2 class="noprint" data-count="45">--</h2>
                                 <h2 class="print">45</h2>
+                                <span>+</span>
                             </div>
                             <div class="skill-meta">
                                 <h3>{t("index:CardProjectTitle")}</h3>
@@ -59,7 +65,7 @@ changeLanguage("en");
                             <p>{t("index:CardProjectDetail")}</p>
                         </div>
                     </div>
-                    <div class="skill-card">
+                    <div class="skill-card" tabindex="0">
                         <div class="skill">
                             <div class="skill-level">
                                 <h2 class="noprint" data-count="50">--</h2>
@@ -76,7 +82,7 @@ changeLanguage("en");
                             <p>{t("index:CardBADetail")}</p>
                         </div>
                     </div>
-                    <div class="skill-card">
+                    <div class="skill-card" tabindex="0">
                         <div class="skill">
                             <div class="skill-level">
                                 <h2 class="noprint" data-count="30">--</h2>
@@ -94,7 +100,7 @@ changeLanguage("en");
                             <p>{t("index:CardImplementationDetail")}</p>
                         </div>
                     </div>
-                    <div class="skill-card">
+                    <div class="skill-card" tabindex="0">
                         <div class="skill">
                             <div class="skill-level">
                                 <h2 class="noprint" data-count="20">--</h2>
@@ -155,55 +161,55 @@ changeLanguage("en");
                 <div class="list-card">
                     <h3>{t("index:SkillsProgrammingLangAndTools")}</h3>
                     <ul class="dev-list-inline">
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="HTML5">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="HTML5">
                             <i class="fab fa-html5"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="CSS3">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="CSS3">
                             <i class="fab fa-css3-alt"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="JavaScript">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="JavaScript">
                             <i class="fab fa-js-square"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="Node JS">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="Node JS">
                             <i class="fab fa-node-js"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="SASS">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="SASS">
                             <i class="fab fa-sass"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="NPM">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="NPM">
                             <i class="fab fa-npm"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="Webpack">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="Webpack">
                             <i class="devicon-webpack-plain"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="C#">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="C#">
                             <i class="devicon-csharp-line"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text=".NET Framework">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text=".NET Framework">
                             <i class="devicon-dot-net-plain-wordmark"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text=".NET Core">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text=".NET Core">
                             <i class="devicon-dotnetcore-plain"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="Bootstrap">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="Bootstrap">
                             <i class="devicon-bootstrap-plain"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="MSSQL">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="MSSQL">
                             <i class="devicon-microsoftsqlserver-plain-wordmark"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="GIT">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="GIT">
                             <i class="devicon-git-plain"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="jQuery">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="jQuery">
                             <i class="devicon-jquery-plain"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="Adobe Photoshop">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="Adobe Photoshop">
                             <i class="devicon-photoshop-plain"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="Azure">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="Azure">
                             <i class="devicon-azure-plain"></i>
                         </li>
-                        <li class="dev-list-inline-item" data-tooltip="bottom" data-tooltip-text="TypeScript">
+                        <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="TypeScript">
                             <i class="devicon-typescript-plain"></i>
                         </li>
                     </ul>
