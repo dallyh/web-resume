@@ -2,6 +2,7 @@ html,
 ::after,
 ::before {
     --body-color: #32353b;
+    --header-bg: #eef0f7;
     --dev-icon-color: #81899c;
     --body-color-light: #d9e7f8;
     --button-bg: var(--body-color-light);
@@ -20,19 +21,20 @@ html,
     --skill-card-hover-radial-color: rgba(91, 106, 154, 0.2);
     --skill-card-hover-shadow: rgba(0, 0, 0, 0.5);
     --skill-card-border-color: rgba(0, 0, 0, 0.2);
-
+    --page-width: 1250px;
 }
 
 html[data-theme="dark"],
 html[data-theme="dark"] ::after,
 html[data-theme="dark"] ::before {
     --body-color: #d2d6e0;
+    --header-bg: #161b22;
     --dev-icon-color: #96a1bb;
     --button-bg: #587faf;
     --button-color: var(--slider-bg);
-    --skill-card-bg: #3E4042; /* Skill card color */
+    --skill-card-bg: #161b22; /* Skill card color */
     --skill-card-hover: var(--body-bg);
-    --body-bg: #232527;
+    --body-bg: #0d1117;
     --calypso: #31708f;
     --accent-color: #4a90e2;
     --h3-color: #3998eb;
@@ -43,7 +45,7 @@ html[data-theme="dark"] ::before {
     --img-profile-border: var(--accent-color);
     --button-hover-color: var(--body-color-light);
     --skill-card-hover-radial-color: rgba(255, 255, 255, 0.06);
-    --skill-card-hover-shadow: #3E4042;
+    --skill-card-hover-shadow: #3e4042;
     --skill-card-border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -52,6 +54,7 @@ html[data-theme="dark"] ::before {
     html[data-theme="dark"] ::after,
     html[data-theme="dark"] ::before {
         --body-color: #32353b;
+        --header-bg: #eef0f7;
         --dev-icon-color: #81899c;
         --body-color-light: #d9e7f8;
         --button-bg: var(--body-color-light);
@@ -67,5 +70,8 @@ html[data-theme="dark"] ::before {
         --slider-bg-before: var(--accent-color);
         --skill-card-bg-gray: rgb(189, 189, 189);
         --img-profile-border: var(--calypso);
+        --skill-card-hover-radial-color: rgba(91, 106, 154, 0.2);
+        --skill-card-hover-shadow: rgba(0, 0, 0, 0.5);
+        --skill-card-border-color: rgba(0, 0, 0, 0.2);
     }
 }

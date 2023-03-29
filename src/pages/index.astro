@@ -11,14 +11,14 @@ changeLanguage("cs");
 ---
 
 <Layout title={`${t("shared:NamePossesive")} ${t("shared:Resume")}`}>
+    <div class="header-container">
+        <header>
+            <p>{`${t("shared:NamePossesive")} ${t("shared:Resume")}`}</p>
+            <ThemeToggle/>
+            <LanguageSelector showFlag={true}/>
+        </header>
+    </div>
     <div class="page-wrapper">
-        <div class="header-container">
-            <header>
-                <p>{`${t("shared:NamePossesive")} ${t("shared:Resume")}`}</p>
-                <ThemeToggle/>
-                <LanguageSelector showFlag={true}/>
-            </header>
-        </div>
         <main class="main-grid">
             <div class="about-container">
                 <!-- Introduction -->
@@ -159,25 +159,26 @@ changeLanguage("cs");
                 </div>
 
                 <div class="list-card">
-                    <h3>{t("index:SkillsProgrammingLangAndTools")}</h3>
+                    <h3>{t("index:SkillsProgrammingLangAndTools")} <i class="fa-solid fa-circle-info" data-tooltip="top" data-tooltip-text={t("index:HoverIconsTooltip")}></i></h3>
+                    
                     <ul class="dev-list-inline">
                         <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="HTML5">
-                            <i class="fab fa-html5"></i>
+                            <i class="devicon-html5-plain"></i>
                         </li>
                         <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="CSS3">
-                            <i class="fab fa-css3-alt"></i>
+                            <i class="devicon-css3-plain"></i>
                         </li>
                         <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="JavaScript">
-                            <i class="fab fa-js-square"></i>
+                            <i class="devicon-javascript-plain"></i>
                         </li>
                         <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="Node JS">
-                            <i class="fab fa-node-js"></i>
+                            <i class="devicon-nodejs-plain"></i>
                         </li>
                         <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="SASS">
-                            <i class="fab fa-sass"></i>
+                            <i class="devicon-sass-original"></i>
                         </li>
                         <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="NPM">
-                            <i class="fab fa-npm"></i>
+                            <i class="devicon-npm-original-wordmark"></i>
                         </li>
                         <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="Webpack">
                             <i class="devicon-webpack-plain"></i>

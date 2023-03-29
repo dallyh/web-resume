@@ -231,3 +231,7 @@ p {
 [data-theme="dark"] .svg-astro {
     filter: invert(100%) grayscale(100%);
 }
+
+.tippy-content {
+    text-align: center;
+}

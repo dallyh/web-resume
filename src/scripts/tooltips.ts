@@ -27,7 +27,8 @@ export const InitializeTooltips = () => {
         let tippyInstance = tippy(tooltip, {
             content: content,
             placement: placement,
-            animation: 'shift-away-subtle'
+            animation: 'shift-away-subtle',
+            maxWidth: "250px"
         });
 
         if (showOnLoadDelay > 0)

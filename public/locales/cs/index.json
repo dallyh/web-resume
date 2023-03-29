@@ -50,5 +50,6 @@
     "SectionExperience": "Zkušenosti",
     "SectionInterests": "Zájmy",
     "SectionSkills": "Dovednosti",
-    "TimelineTitle": "Pracovní zkušenosti a vzdělání"
+    "TimelineTitle": "Pracovní zkušenosti a vzdělání",
+    "HoverIconsTooltip": "Umístěním ukazatele myši na ikony zobrazíte jejich popis."
 }

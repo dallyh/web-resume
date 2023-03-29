@@ -50,5 +50,6 @@
     "SectionExperience": "Experience",
     "SectionInterests": "Interests",
     "SectionSkills": "Skills",
-    "TimelineTitle": "Work experience and education"
+    "TimelineTitle": "Work experience and education",
+    "HoverIconsTooltip": "Hover over the icons to see the name."
 }

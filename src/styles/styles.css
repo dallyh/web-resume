@@ -1,10 +1,9 @@
 /* Page styling */
 .page-wrapper {
-    max-width: 1100px;
+    max-width: 1250px;
     height: auto;
     margin: 0px auto;
     display: grid;
-    gap: 1.5rem;
     grid-template-rows: repeat(2, max-content);
 }
 
@@ -19,44 +18,22 @@
     position: sticky;
     top: 0px;
     display: flex;
-    z-index: 9999;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    justify-content: center;
+    z-index: 999;
     height: max-content;
     width: 100%;
-    grid-area: auto;
+    background-color: var(--header-bg);
     transition: transform 200ms ease;
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 0.5px 6px 0px rgba(0, 0, 0, 0.2);  
 }
 
 header {
     --border: 1px;
-    background-color: var(--body-bg);
+    width: var(--page-width);
     display: flex;
     gap: 1em;
-    height: 38px;
-    width: 100%;
     padding: 0.75rem;
-    box-shadow: 0px 0.5px 6px 0px rgba(0, 0, 0, 0.2);  
-    background-clip: padding-box;
-    border-bottom: solid var(--border) transparent;
-    border-left: solid var(--border) transparent;
-    border-right: solid var(--border) transparent;
-    border-radius: 0px 0px 10px 10px;
-}
-
-header::before {
-    content: "";
-    position: absolute;
-    opacity: 1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    margin: -var(--border);
-    border-radius: inherit;
-    background: linear-gradient(to bottom, transparent, var(--accent-color));
-    transition: opacity 1s ease;
 }
 
 .header-container.hidden {
@@ -79,8 +56,10 @@ header p {
 /* About section */
 .about-container {
     display: grid;
-    gap: 0.5rem;
-    grid-template-rows: min-content 0.8fr;
+    gap: 1rem;
+    min-height: calc(100vh - 84px);
+    grid-template-rows: min-content 1fr;
+    padding-bottom: 1rem;
 }
 
 .hero {
@@ -101,7 +80,6 @@ header p {
     border-radius: 50%;
     border: solid 2px var(--img-profile-border);
     transition: all 300ms;
-    z-index: 1010;
 }
 
 .img-profile:focus,
@@ -235,7 +213,6 @@ header p {
 .skill-cards-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: 0.8fr 1fr;
     gap: 1rem;
     position: relative;
 }
