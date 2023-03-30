@@ -7,7 +7,7 @@
     "CardProjectDescription": "Tvorba a přizpůsobení řešení na míru zákazníkovi.",
     "CardBADescription": "Analýza potřeb zákazníků, vytváření analýz a zadání pro vývojáře.",
     "CardImplementationDescription": "Instalace softwaru, konfigurace low-code/no-code platforem.",
-    "CardDevDescription": "Vývoj nového softwaru a rozšiřování stávajícíh řešení.",
+    "CardDevDescription": "Vývoj nového softwaru a rozšiřování stávajícího řešení.",
     "CardProjectDetail": "Za své léta v oboru business konzultanta mám již za sebou více než 45 dokončených projektů. Patří mezi ně projekty menších rozměrů, ale také projekty pohybující se v řádech měsíců až let pro dokončení. Mezi většinu těchto projektů patří hlavně implementace software pro vytěžování a správu pro digitální dokumenty (systémy DMS, primárně M-Files či na míru šitá řešení v MS SharePoint).",
     "CardBADetail": "Business analýza pro mě není neznámým pojmem. S touto činností se setkávám na denním pořádku. To vše zahrnuje úzkou spolupráci se zákazníkem, vývojovým oddělením, projektovými manažery a podobně. Samozřejmostí k těmto analýzám jsou také analytické dokumenty, procesní analýzy, use-case diagramy a návrhy infrastruktury.",
     "CardImplementationDetail": "Mé zkušenosti také zahrnují samotnou implementaci a instalaci různého software, primárně určeného pro OS Windows Server. Jako příklad je to vytěžovací software FlexiCapture, a také MSSQL Server. S tímto souvisí také konfigurace tohoto software a dalších potřebných komponent jako je IIS.",
@@ -27,7 +27,7 @@
     "ECMBusinessConsultantDate": "Duben 2020 – Současnost",
     "MonetaAnalystDate": "Září 2018 – Březen 2020",
     "AsusTechnicianDate": "Říjen 2014 – Duben 2017",
-    "InterestsDescription": "Řekněme že jsem opravdu aktivní člověk, i když z duše nenávidím běhání. Opravdu miluji zvedání těžkých věcí v posilovně. Také si rád zajdu na hory. Další věci kterými\r\nzaplňuji svůj volný čas jsou hraní her, programování pro zábavu a taky jedení jídla.",
+    "InterestsDescription": "Řekněme, že jsem opravdu aktivní člověk, i když z duše nenávidím běhání. Opravdu miluji zvedání těžkých věcí v posilovně. Také si rád zajdu na hory. Další věci kterými\r\nzaplňuji svůj volný čas jsou hraní her a programování pro zábavu.",
     "SkillsIntroduction": "Jako business konzultant jsem si stačil osahat hodně věcí, od Windows serverů, přes konfigurace IIS a také programování/skriptování.\r\nNíže jsou uvedeny pouze ty největší oblasti, s kterými se setkávám dennodenně.",
     "SkillsSoftwareAndPlatformsDescription": "Zkušenosti s těmito softwary a platformami mám jak v rámci implementace, tak také v customizaci řešení na míru šitém zákazníkovi.\r\nSamozřejmostí je také integrace na další navazující systémy. \r\nVe své kariéře jsem se také setkal s celou řadou ERP systémů jako např. Dynamics 365 Business Central, Helios Green, Karat! apod.",
     "SkillsOther": "Ostatní",
@@ -39,7 +39,7 @@
     "SkillsBA": "Business Analýza",
     "SkillsBADescription": "Mapování procesů, UML, vývojářské zadání...",
     "SkillsWindowsServers": "Windows Servery",
-    "SkillsWindowsServersDescription": "Konfigurace serverů, instalace potřebného software (on-premise, IIS, Azure, a další)...",
+    "SkillsWindowsServersDescription": "Konfigurace serverů, instalace potřebného software (on-premise, IIS, Azure, a další) ...",
     "SkillsDatabases": "Relační Databáze",
     "SkillsDatabasesDescription": "SQL, PLSQL, T-SQL, reporting, databázové procedury...",
     "HighSchoolNaJizdarneDescription": "Mechanik elektrotechnik - počítačové a zabezpečovací systémy",
@@ -53,3 +53,5 @@
     "TimelineTitle": "Pracovní zkušenosti a vzdělání",
     "HoverIconsTooltip": "Umístěním ukazatele myši na ikony zobrazíte jejich popis."
 }
+
+
