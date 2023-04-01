@@ -13,53 +13,14 @@
     padding: 0rem 1rem 0rem 1rem;
 }
 
-/* Header */
-.header-container {
-    position: sticky;
-    top: 0px;
-    display: flex;
-    justify-content: center;
-    z-index: 999;
-    height: max-content;
-    width: 100%;
-    background-color: var(--header-bg);
-    transition: transform 200ms ease;
-    margin-bottom: 1.5rem;
-    box-shadow: 0px 0.5px 6px 0px rgba(0, 0, 0, 0.2);  
-}
-
-header {
-    --border: 1px;
-    width: var(--page-width);
-    display: flex;
-    gap: 1em;
-    padding: 0.75rem;
-}
-
-.header-container.hidden {
-    transform: translateY(-110%);
-}
-
-.header-container.hidden header::before {
-    opacity: 0;
-}
-
-header p {
-    margin-right: auto;
-    color: var(--accent-color);
-    font-size: 1.2rem;
-    font-weight: 400;
-    display: initial;
-    align-self: center;
-}
-
 /* About section */
 .about-container {
     display: grid;
-    gap: 1rem;
-    min-height: calc(100vh - 84px);
-    grid-template-rows: min-content 1fr;
+    gap: 0.5rem;
+    grid-template-rows: repeat(3, min-content);
+    min-height: calc(100vh - 100px);
     padding-bottom: 1rem;
+    scroll-margin-top: 100px;
 }
 
 .hero {
@@ -75,6 +36,7 @@ header p {
 }
 
 .img-profile {
+    z-index: 2;
     width: 7rem;
     height: 95%;
     border-radius: 50%;
@@ -82,7 +44,6 @@ header p {
     transition: all 300ms;
 }
 
-.img-profile:focus,
 .img-profile:hover {
     transform: scale(2) translateY(25px) translatex(25px);
 }
@@ -220,7 +181,7 @@ header p {
 .skill-card {
     display: grid;
     grid-template-rows: 1fr min-content;
-    justify-content: center; 
+    justify-content: center;
     gap: 1rem;
     align-items: center;
     background-color: var(--skill-card-bg);
@@ -334,7 +295,6 @@ header p {
     padding: 0;
     justify-self: center;
 }
-
 
 .skill-cards-container .skill-card.active {
     z-index: 1;
@@ -465,17 +425,18 @@ header p {
 }
 
 /* Media queries */
-@media (max-width: 1110px) {
-    header {
-        border-left: unset;
-        border-right: unset;
-        border-radius: unset;
-    }
-}
-
 @media (max-width: 768px) {
     html {
-        --screen-sm:true;
+        --screen-sm: true;
+    }
+
+    .page-wrapper {
+        max-width: 100vw;
+    }
+
+    .page-wrapper.nav-active {
+        transition: transform 200ms ease;
+        transform: translateX(250px);
     }
 
     .profile {
@@ -490,12 +451,6 @@ header p {
 
     .img-profile:hover {
         transform: unset;
-    }
-
-    header {
-        border-left: unset;
-        border-right: unset;
-        border-radius: unset;
     }
 
     .main-grid {
@@ -569,5 +524,5 @@ header p {
 
     .dev-list-inline .dev-list-inline-item {
         padding: 0.5rem;
-    } 
+    }
 }

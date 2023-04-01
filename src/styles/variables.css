@@ -22,6 +22,10 @@ html,
     --skill-card-hover-shadow: rgba(0, 0, 0, 0.5);
     --skill-card-border-color: rgba(0, 0, 0, 0.2);
     --page-width: 1250px;
+    --dropdown-bg: #eef0f7;
+    --dropdown-border-color: rgba(0, 0, 0, 0.2);
+    --menu-hover-bg: rgba(0, 0, 0, 0.6);
+    --burger-menu-bg: #1e272e;
 }
 
 html[data-theme="dark"],
@@ -47,6 +51,10 @@ html[data-theme="dark"] ::before {
     --skill-card-hover-radial-color: rgba(255, 255, 255, 0.06);
     --skill-card-hover-shadow: #3e4042;
     --skill-card-border-color: rgba(255, 255, 255, 0.1);
+    --dropdown-bg: #161b22;
+    --dropdown-border-color: rgba(255, 255, 255, 0.1);
+    --menu-hover-bg: rgba(255, 255, 255, 0.7);
+    --burger-menu-bg: #dddddd;
 }
 
 @media print {

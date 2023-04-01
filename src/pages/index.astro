@@ -3,28 +3,21 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/keyframes.css";
 import "../styles/styles.css";
 import "../styles/print.css";
-import LanguageSelector from "../components/LanguageSelector.astro";
+import Navigation from "../components/Navigation.astro";
 import i18next, { t, changeLanguage } from "i18next";
-import ThemeToggle from "../components/ThemeToggle.astro";
 
 changeLanguage("cs");
 ---
 
 <Layout title={`${t("shared:NamePossesive")} ${t("shared:Resume")}`}>
-    <div class="header-container">
-        <header>
-            <p>{`${t("shared:NamePossesive")} ${t("shared:Resume")}`}</p>
-            <ThemeToggle/>
-            <LanguageSelector showFlag={true}/>
-        </header>
-    </div>
+    <Navigation />
     <div class="page-wrapper">
         <main class="main-grid">
-            <div class="about-container">
+            <section class="about-container" id="about">
                 <!-- Introduction -->
                 <div class="hero">
                     <div class="profile">
-                        <img class="img-profile" tabindex="0" src="/assets/img/profile.png" alt="Profile picture"/>
+                        <img class="img-profile" tabindex="0" src="/assets/img/profile.png" alt="Profile picture" />
                         <div class="name">
                             <h1 class="name-header">
                                 <strong>Dalibor</strong> Hon
@@ -32,25 +25,23 @@ changeLanguage("cs");
                             <span class="job-title">{t("index:CurrentPosition")}</span>
                         </div>
                     </div>
-                    <div class="social">
-                        <button class="button" onclick="window.print()">{t("shared:DownloadResume")}</button>
-                        <a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">
-                            <button tabindex="-1" class="button">
-                                <i class="fa-brands fa-linkedin"></i> 
-                                LinkedIn
-                            </button>
-                        </a>
-                    </div>
-                    <h2 class="lead">{t("index:Lead")}</h2>
-                    <p class="about-me">{t("index:AboutIntroduction")}</p>
                 </div>
-
+                <div class="social">
+                    <button class="button" onclick="window.print()">{t("shared:DownloadResume")}</button>
+                    <a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">
+                        <button tabindex="-1" class="button">
+                            <i class="fa-brands fa-linkedin"></i>
+                            LinkedIn
+                        </button>
+                    </a>
+                </div>
+                <h2 class="lead">{t("index:Lead")}</h2>
+                <p class="about-me">{t("index:AboutIntroduction")}</p>
                 <!-- Achievements -->
-                <section class="skill-cards-container pagebreak">
+                <div class="skill-cards-container pagebreak">
                     <div class="skill-card" tabindex="0">
                         <div class="skill">
                             <div class="skill-level">
-                                
                                 <h2 class="noprint" data-count="45">--</h2>
                                 <h2 class="print">45</h2>
                                 <span>+</span>
@@ -109,7 +100,7 @@ changeLanguage("cs");
                             </div>
                             <div class="skill-meta">
                                 <h3>{t("index:CardDevTitle")}</h3>
-                                <span>{t("index:CardDevDescription")}</span>         
+                                <span>{t("index:CardDevDescription")}</span>
                             </div>
                         </div>
                         <p class="skill-click">{t("index:CardClick")}</p>
@@ -117,11 +108,12 @@ changeLanguage("cs");
                             <p>{t("index:CardDevDetail")}</p>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+
             <!-- Skills section -->
             <h2 class="section-title pagebreak">{t("index:SectionSkills")}</h2>
-            <section class="skills">
+            <section class="skills" id="skills">
                 <p>
                     {t("index:SkillsIntroduction")}
                 </p>
@@ -160,7 +152,7 @@ changeLanguage("cs");
 
                 <div class="list-card">
                     <h3>{t("index:SkillsProgrammingLangAndTools")} <i class="fa-solid fa-circle-info" data-tooltip="top" data-tooltip-text={t("index:HoverIconsTooltip")}></i></h3>
-                    
+
                     <ul class="dev-list-inline">
                         <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="HTML5">
                             <i class="devicon-html5-plain"></i>
@@ -248,7 +240,7 @@ changeLanguage("cs");
 
             <!-- Certifications section -->
             <h2 class="section-title pagebreak">{t("index:SectionCertifications")}</h2>
-            <section class="certifications">
+            <section class="certifications" id="certifications">
                 <div class="list-card certifications">
                     <ul class="fa-ul">
                         <li>
@@ -280,13 +272,13 @@ changeLanguage("cs");
                             M-Files Solution Engineer
                         </li>
                     </ul>
-                    <p><Fragment set:html={t("index:CertLinkedIn")}/></p>
+                    <p><Fragment set:html={t("index:CertLinkedIn")} /></p>
                 </div>
             </section>
 
             <!-- Life timeline -->
             <h2 class="section-title pagebreak">{t("index:TimelineTitle")}</h2>
-            <section class="timeline">
+            <section class="timeline" id="experience">
                 <div class="timeline-card">
                     <h3>{t("index:SectionExperience")}</h3>
                     <div class="meta">
@@ -333,11 +325,11 @@ changeLanguage("cs");
                 </div>
             </section>
         </main>
+        <!-- Footer -->
+        <footer class="footer-container">
+            <p>{t("footer:PageCreatedBy")}</p>
+            <p><Fragment set:html={t("footer:Host")} /></p>
+            <p><Fragment set:html={t("footer:Design")} /></p>
+        </footer>
     </div>
-    <!-- Footer -->
-    <footer class="footer-container">
-        <p>{t("footer:PageCreatedBy")}</p>
-        <p><Fragment set:html={t("footer:Host")}/></p>
-        <p><Fragment set:html={t("footer:Design")}/></p>
-    </footer>
 </Layout>

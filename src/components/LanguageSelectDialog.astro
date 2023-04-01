@@ -1,20 +1,45 @@
 ---
 import ModalDialog from "./ModalDialog.astro";
-import LanguageSelector from "./LanguageSelector.astro";
+import { localizePath } from "astro-i18next";
 import i18next, { i18n, t } from "i18next";
 import ISO6991 from "iso-639-1";
 import localeEmoji from "locale-emoji";
 
-let modalTitle = t("languagePopup:PopupTitle");
-let closeButtonText = t("shared:PopupClose");
-let currentLanguage = ISO6991.getNativeName(i18next.language);
-let currentLocale = i18next.language;
+
+const supportedLanguages = i18next.languages;
+const currentLanguage = i18next.language;
+const { pathname } = Astro.url;
+const modalTitle = t("languagePopup:PopupTitle");
+const closeButtonText = t("shared:PopupClose");
+const currentnativeLanguage = ISO6991.getNativeName(i18next.language);
+
+const capitalizeFirstLetter = (str: string) => {
+    const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+    return capitalized;
+};
 ---
 
 <ModalDialog dialogId="languageSelectDialog" modalTitle={modalTitle} closeButtonText={closeButtonText}>
     <div class="lang-select-dialog-body" slot="body">
-        <p>{t("languagePopup:PopupBody")}<span style="text-transform: capitalize; font-weight: 600;"> {currentLanguage} {localeEmoji(currentLocale)}</span>.</p>
-        <LanguageSelector showFlag={true} id="modalLanguageSelector"/>
+        <p>{t("languagePopup:PopupBody")}<span style="text-transform: capitalize; font-weight: 600;"> {currentnativeLanguage} {localeEmoji(currentLanguage)}</span>.</p>
+        <div class="dialog-languages" data-js-current-language={currentLanguage}>
+            {
+                supportedLanguages.map((supportedLanguage: string) => {
+                    let value = localizePath(pathname, supportedLanguage);
+                    const nativeName = capitalizeFirstLetter(ISO6991.getNativeName(supportedLanguage));
+                    const flag = localeEmoji(supportedLanguage) + " ";
+                    const label = flag + nativeName;
+    
+                    return (
+                            <a href={value} data-js-language={supportedLanguage}>
+                                <span>{label}</span>
+                            </a>
+                    );
+                })
+            }
+        </div>
+        
+        <!-- <LanguageSelector showFlag={true} buttonId="modalLanguageDropdownButton" dropdownId="modalLanguageDropdown" /> -->
     </div>
 </ModalDialog>
 
@@ -22,6 +47,23 @@ let currentLocale = i18next.language;
     .lang-select-dialog-body p {
         margin-bottom: 1rem;
     }
+
+    .dialog-languages {
+        display: flex;
+        justify-content: center; 
+    }
+
+    .dialog-languages a {
+        height: 25px;
+        width: max-content;
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .dialog-languages span {
+        pointer-events: none;
+    }
+
 </style>
 
 <script>
@@ -31,7 +73,21 @@ let currentLocale = i18next.language;
     const path = window.location.pathname;
     const url = window.location.origin;
     const defaultLanguage = AstroI18nextConfig.defaultLocale;
-    const languageSelect = document.querySelector(".language-selector > select") as HTMLSelectElement;
+    const languageSelect = document.querySelector("dialog-languages") as HTMLElement;
+
+    // Check for changes on links
+    const languageSelectorLinks = document.querySelectorAll("[data-js-language]");
+    languageSelectorLinks.forEach((selector) => {
+        selector.addEventListener("click", function (e) {
+            let currectSelector = e.target as HTMLAnchorElement;
+            let selectedLanguage = currectSelector.getAttribute("data-js-language");
+            if (selectedLanguage === null) {
+                console.error("Could not find 'data-js-language' attribute.");
+                return;
+            }
+            window.localStorage.setItem("language", selectedLanguage);
+        });
+    });
 
     // Check for locale in path
     const checkPathLocale = (language: string) => {

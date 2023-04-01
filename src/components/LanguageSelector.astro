@@ -9,84 +9,97 @@ import ISO6991 from "iso-639-1";
 
 export interface Props extends astroHTML.JSX.SelectHTMLAttributes {
     showFlag?: boolean;
+    animate?: boolean;
+    buttonId: string;
+    dropdownId: string;
 }
 
 const supportedLanguages = i18next.languages;
 const currentLanguage = i18next.language;
 const { pathname } = Astro.url;
-const { showFlag = false, id, ...attributes } = Astro.props;
+const { showFlag = false, animate = true, dropdownId, buttonId, ...attributes } = Astro.props;
+const capitalizeFirstLetter = (str: string) => {
+    const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
+    return capitalized;
+};
 ---
 
 <div class="language-selector">
-    <select {...attributes} data-js-current-language={currentLanguage}>
+    <button class:list={["dropdown", {"menu-hover-effect": animate}]} data-dropdown-target={`#${dropdownId}`} id={buttonId}>
+        {(showFlag ? localeEmoji(currentLanguage) + " " : "") + capitalizeFirstLetter(ISO6991.getNativeName(currentLanguage))}
+    </button>
+    <ul class="dropdown-content" id={dropdownId} data-js-current-language={currentLanguage}>
         {
             supportedLanguages.map((supportedLanguage: string) => {
                 let value = localizePath(pathname, supportedLanguage);
+                const nativeName = capitalizeFirstLetter(ISO6991.getNativeName(supportedLanguage));
                 const flag = showFlag ? localeEmoji(supportedLanguage) + " " : "";
-                const nativeName = ISO6991.getNativeName(supportedLanguage);
                 const label = flag + nativeName;
+
                 return (
-                    <option value={value} selected={supportedLanguage === currentLanguage} data-js-language={supportedLanguage} title={label}>
-                        {label}
-                    </option>
+                    <li>
+                        <a href={value} data-js-language={supportedLanguage}>
+                            <span>{label}</span>
+                            <i class={supportedLanguage == currentLanguage ? "fa fa-check" : ""} aria-hidden="true" />
+                        </a>
+                    </li>
                 );
             })
         }
-    </select>
+    </ul>
 </div>
 
 <script>
-    const languageSelector = document.querySelectorAll(".language-selector > select");
+    const languageSelector = document.querySelectorAll("[data-js-language]");
     languageSelector.forEach((selector) => {
-        selector.addEventListener("change", function (e) {
-            let currectSelector = e.target as HTMLSelectElement;
-            let selectedLanguage = currectSelector[currectSelector.selectedIndex].getAttribute("data-js-language");
+        selector.addEventListener("click", function (e) {
+            let currectSelector = e.target as HTMLAnchorElement;
+            let selectedLanguage = currectSelector.getAttribute("data-js-language");
             if (selectedLanguage === null) {
                 console.error("Could not find 'data-js-language' attribute.");
                 return;
             }
             window.localStorage.setItem("language", selectedLanguage);
-            window.location.href = currectSelector.value;
         });
     });
 </script>
 
 <style>
+    span,
+    i {
+        pointer-events: none;
+    }
+
     .language-selector {
         display: flex;
         justify-content: center;
+        font-size: 1rem;
+        position: relative;
+        height: 60px;
     }
 
-    .language-selector > select {
-        font-weight: 600;
-        font-size: 0.9rem;
-        height: calc(38/1rem);
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        background-color: var(--skill-card-bg);
-        color: var(--button-color);
-        font-family: sans-serif;
-        text-transform: uppercase;
-        border: 1px solid var(--accent-color);
-        border-radius: 10px;
+    button {
+        background-color: transparent;
+        color: var(--accent-color);
+        font-family: inherit;
+        border: none;
         transition: all 200ms;
         cursor: pointer;
-    }
-
-    .language-selector > select > option {
-        font-weight: 400;
-        font-family: inherit;
-        font-size: 1rem;
-        text-transform: capitalize;
-    }
-
-    .language-selector > select:is(:focus, :hover, :focus-visible) {
-        outline: none;
+        font-size: inherit;
+        text-transform: uppercase;
         font-weight: 600;
-        color: var(--button-hover-color);
-        border: 1px solid transparent;
-        background-color: var(--button-bg);
+        position: relative;
+        padding: 0;
+    }
+
+    button::after {
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
     }
 </style>

@@ -6,28 +6,6 @@
     <label class="theme-switch" for="checkbox">
         <input type="checkbox" id="checkbox" />
         <div class="icons">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-sun"
-            >
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
             <svg class="feather feather-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
@@ -38,6 +16,23 @@
 <script>
     // Get the theme toggle input
     const themeToggle = document.querySelector('.theme-switch input[type="checkbox"]') as HTMLInputElement;
+    // Get current theme and set the input box
+    const setInput = () => {
+        let currentTheme = localStorage.getItem("theme");
+        if (currentTheme === null) return;
+
+        switch (currentTheme) {
+            case "dark":
+                themeToggle.checked = true;
+                break;
+            case "light":
+                themeToggle.checked = false;
+            default:
+                break;
+        }
+    }
+    setInput();
+    
     // Function that will switch the theme based on if the theme toggle is checked or not
     const switchInputTheme = (e: Event) => {
         if (e === null) return;
@@ -53,19 +48,6 @@
 
     // Add an event listener to the theme toggle, which will switch the theme
     themeToggle.addEventListener("change", switchInputTheme, false);
-
-    // Get the current theme from local storage
-    const currentTheme = localStorage.getItem("theme");
-    const matchMediaScheme = () => {
-        // If the current local storage item can be found
-        if (currentTheme) {
-            // If the current theme is dark, check the theme toggle
-            if (currentTheme === "dark") {
-                themeToggle.checked = true;
-            }
-        }
-    };
-    matchMediaScheme();
 </script>
 
 <style>
@@ -76,6 +58,11 @@
         transition: all 200ms;
         border: none;
         background: none;
+        padding: 0;
+    }
+
+    .theme-switch {
+        padding: 1rem;
     }
 
     .theme-switch input {
@@ -85,8 +72,8 @@
     .icons {
         position: relative;
         cursor: pointer;
-        width: 29px;
-        height: 29px;
+        width: 22px;
+        height: 22px;
     }
 
     .feather {
@@ -95,42 +82,18 @@
                     fill 300ms ease;
     }
 
-    .feather-sun {
-        position: absolute;
-        opacity: 1;
-        width: 29px;
-        height: 29px;
-        color: var(--button-color);
-        fill: #FCD53F;
-        fill-opacity: 0.75;
-    }
-
     .feather-moon {
-        opacity: 0;
-        width: 29px;
-        height: 29px;
-        transform: scale(-100%);
+        opacity: 1;
+        width: 22px;
+        height: 22px;
         stroke: var(--button-color);
         stroke-width: 1.2px;
         fill: transparent;
     }
 
-    .theme-switch-wrapper:is(:focus, :hover, :focus-visible) .feather-sun {
-        color: var(--button-color);
-        fill: var(--button-color);
-    }
-
-    .theme-switch-wrapper:is(:focus, :hover, :focus-visible) .feather-moon {
-        fill: var(--button-color);
-    }
-
-    input:checked + .icons .feather-sun {
-        opacity: 0;
-        transform: scale(-100%);
-    }
-
-    input:checked + .icons .feather-moon {
-        opacity: 1;
-        transform: scale(100%);
+    html[data-theme="dark"] .feather-moon
+    {
+        fill: #ffce45;
+        stroke: #ffce45;
     }
 </style>
