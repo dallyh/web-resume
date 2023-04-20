@@ -13,22 +13,18 @@ import i18next, { t, changeLanguage } from "i18next";
         </div>
         <p>{`${t("shared:NamePossesive")} ${t("shared:Resume")}`}</p>
         <div class="header-menu">
-            <div class="header-menu-item menu-hover-effect active">
-                <span>01</span>
-                <a href="#about">{t("navigation:Nav_Intro")}</a>
-            </div>
-            <div class="header-menu-item menu-hover-effect">
-                <span>02</span>
-                <a href="#skills">{t("navigation:Nav_Skills")}</a>
-            </div>
-            <div class="header-menu-item menu-hover-effect">
-                <span>03</span>
-                <a href="#certifications">{t("navigation:Nav_Certifications")}</a>
-            </div>
-            <div class="header-menu-item menu-hover-effect">
-                <span>04</span>
-                <a href="#experience">{t("navigation:Nav_Experience")}</a>
-            </div>
+            <a href="#about" class="header-menu-item menu-hover-effect active">
+                <span>01</span>{t("navigation:Nav_Intro")}
+            </a>
+            <a href="#skills" class="header-menu-item menu-hover-effect">
+                <span>02</span>{t("navigation:Nav_Skills")}
+            </a>
+            <a href="#certifications" class="header-menu-item menu-hover-effect">
+                <span>03</span>{t("navigation:Nav_Certifications")}
+            </a>
+            <a href="#experience" class="header-menu-item menu-hover-effect">
+                <span>04</span>{t("navigation:Nav_Experience")}
+            </a>
         </div>
         <div class="header-user-settings">
             <ThemeToggle />
@@ -47,22 +43,18 @@ import i18next, { t, changeLanguage } from "i18next";
             </a>
         </div>
         <div class="aside-menu">
-            <div class="aside-menu-item menu-hover-effect active">
-                <span>01</span>
-                <a href="#about">{t("navigation:Nav_Intro")}</a>
-            </div>
-            <div class="aside-menu-item menu-hover-effect">
-                <span>02</span>
-                <a href="#skills">{t("navigation:Nav_Skills")}</a>
-            </div>
-            <div class="aside-menu-item menu-hover-effect">
-                <span>03</span>
-                <a href="#certifications">{t("navigation:Nav_Certifications")}</a>
-            </div>
-            <div class="aside-menu-item menu-hover-effect">
-                <span>04</span>
-                <a href="#experience">{t("navigation:Nav_Experience")}</a>
-            </div>
+            <a href="#about" class="aside-menu-item menu-hover-effect active">
+                <span>01</span>{t("navigation:Nav_Intro")}
+            </a>
+            <a href="#skills" class="aside-menu-item menu-hover-effect">
+                <span>02</span>{t("navigation:Nav_Skills")}
+            </a>
+            <a href="#certifications" class="aside-menu-item menu-hover-effect">
+                <span>03</span>{t("navigation:Nav_Certifications")}
+            </a>
+            <a href="#experience" class="aside-menu-item menu-hover-effect">
+                <span>04</span>{t("navigation:Nav_Experience")}
+            </a>
         </div>
         <div class="aside-user-settings">
             <ThemeToggle />
@@ -143,14 +135,21 @@ import i18next, { t, changeLanguage } from "i18next";
         gap: 0.5rem;
         position: relative;
         white-space: nowrap;
-    }
-
-    .header-menu .header-menu-item a {
         font-weight: 600;
         letter-spacing: 0px;
         text-transform: uppercase;
         text-decoration: none;
         position: relative;
+    }
+    .header-menu-item:hover {
+        text-decoration: none;
+    }
+
+    .header-menu-item > span {
+        color: var(--body-color);
+    }
+
+    .header-menu .header-menu-item a {
     }
 
     @media (max-width: 768px) {
@@ -340,13 +339,18 @@ import i18next, { t, changeLanguage } from "i18next";
             gap: 0.5rem;
             position: relative;
             white-space: nowrap;
-        }
-
-        aside .aside-menu .aside-menu-item a {
             text-transform: uppercase;
             font-weight: 900;
             font-size: 1.1rem;
             letter-spacing: 2px;
+        }
+
+        aside .aside-menu-item {
+            text-decoration: none;
+        }
+
+        aside .aside-menu-item > span {
+            color: var(--body-color);
         }
 
         aside .aside-user-settings {
@@ -389,8 +393,7 @@ import i18next, { t, changeLanguage } from "i18next";
 </style>
 
 <script>
-    import HammerJs from "hammerjs";
-
+    import Hammer from "hammerjs";
     class SideNav {
         constructor() {
             this.initSideNav();
@@ -428,7 +431,7 @@ import i18next, { t, changeLanguage } from "i18next";
             /**
              * Opens navigation menu
              */
-             const openNav = () => {
+            const openNav = () => {
                 if (document.body.classList.contains("nav-active") == false) {
                     navButton.classList.add("active");
                     document.body.classList.add("nav-active");
@@ -509,14 +512,14 @@ import i18next, { t, changeLanguage } from "i18next";
                 sections.forEach((section) => {
                     if (!section.hasAttribute("data-js-intersecting")) return;
 
-                    let targetHeaderLink = (document.querySelector(`.header-menu-item > [href="#${section.id}"]`) as HTMLElement).parentElement;
+                    let targetHeaderLink = document.querySelector(`.header-menu-item[href="#${section.id}"]`) as HTMLElement;
                     if (targetHeaderLink === null) {
                         console.warn("Scroll target for header was not found.");
                         return;
                     }
                     targetHeaderLink.classList.add("active");
 
-                    let targetAsideLink = (document.querySelector(`.aside-menu-item > [href="#${section.id}"]`) as HTMLElement).parentElement;
+                    let targetAsideLink = document.querySelector(`.aside-menu-item[href="#${section.id}"]`) as HTMLElement;
                     if (targetAsideLink === null) {
                         console.warn("Scroll target for aside was not found.");
                         return;
@@ -567,15 +570,15 @@ import i18next, { t, changeLanguage } from "i18next";
             // Hammertime (swipe gestures for nav menu)
             const hammerTime = () => {
                 let hammertime = new Hammer(document.body);
-                hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+                hammertime.get("swipe").set({ direction: Hammer.DIRECTION_HORIZONTAL });
                 hammertime.on("swipe", function (ev) {
-                    if (ev.direction === 4) // Swipe right
-                    {
+                    if (ev.direction === 4) {
+                        // Swipe right
                         openNav();
                     }
 
-                    if (ev.direction === 2) // Swipe left
-                    {
+                    if (ev.direction === 2) {
+                        // Swipe left
                         closeNav();
                     }
                 });
