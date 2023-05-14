@@ -94,3 +94,10 @@ input:autofill {
     margin: 0.5rem 0 0.5rem 0.2rem;
     color: red;
 }
+
+#submit-success {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.25rem;
+    color: var(--accent-color);
+}
