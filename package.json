@@ -12,23 +12,31 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^1.2.2",
+    "@astrojs/react": "^2.1.3",
+    "@astrojs/sitemap": "^1.3.1",
+    "@formkit/auto-animate": "^1.0.0-beta.6",
+    "@formspree/react": "^2.4.1",
     "@types/hammerjs": "^2.0.41",
-    "astro": "^2.2.1",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "astro": "^2.4.5",
     "astro-i18next": "^1.0.0-beta.21",
-    "astro-robots-txt": "^0.4.1",
+    "astro-robots-txt": "^0.5.0",
     "country-flag-emoji-polyfill": "^0.1.4",
     "hammerjs": "^2.0.8",
-    "i18next": "^22.4.14",
+    "i18next": "^22.4.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^12.2.2",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.6",
-    "astro-compress": "1.1.35",
+    "astro-compress": "1.1.42",
     "autoprefixer": "^10.4.14",
     "install": "0.13.0",
     "iso-639-1": "^2.1.15",
     "locale-emoji": "^0.3.0",
-    "npm": "9.6.4"
+    "npm": "9.6.6"
   }
 }

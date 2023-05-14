@@ -26,6 +26,7 @@ html,
     --dropdown-border-color: rgba(0, 0, 0, 0.2);
     --menu-hover-bg: rgba(0, 0, 0, 0.6);
     --burger-menu-bg: #1e272e;
+    --form-input-bg: #eef0f7;
 }
 
 html[data-theme="dark"],
@@ -55,6 +56,7 @@ html[data-theme="dark"] ::before {
     --dropdown-border-color: rgba(255, 255, 255, 0.1);
     --menu-hover-bg: rgba(255, 255, 255, 0.7);
     --burger-menu-bg: #dddddd;
+    --form-input-bg: #161b22;
 }
 
 @media print {

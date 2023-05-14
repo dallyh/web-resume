@@ -1,0 +1,71 @@
+---
+import { t } from "i18next";
+import ContactForm from "./ContactForm/ContactForm";
+---
+
+<div class="contact-info">
+    <div class="social">
+        <h3>{t("shared:SocialLinks")}</h3>
+        <a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+            {" "}LinkedIn
+        </a>
+    </div>
+    <div class="location">
+        <h3>{t("shared:Location")}</h3>
+        <p>Ostrava, {t("shared:MSRegion")}</p>
+        <p>{t("shared:CzechRepublic")}</p>
+    </div>
+    <div class="contact-me">
+        <h3>{t("shared:LeaveMeAMessage")}</h3>
+        <p>{t("contactForm:ContactMe")}</p>
+        <ContactForm client:visible />
+    </div>
+</div>
+
+<style>
+    .contact-info {
+        display: grid;
+        grid-auto-rows: max-content;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0rem 0 0.5rem 0rem;
+    }
+
+    .social {
+        grid-column: 1 / 2;
+        grid-row: 1;
+    }
+
+    .location {
+        grid-column: 1 / 2;
+        grid-row: 2;
+    }
+
+    .contact-me {
+        grid-row: 1 / 3;
+        grid-column: 2 / 4;
+    }
+
+    @media (max-width: 980px) {
+        .contact-info {
+            display: grid;
+            grid-auto-rows: max-content;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 0rem 0 0.5rem 0rem;
+        }
+        .social {
+            grid-column: 1 / 2;
+            grid-row: 1;
+        }
+
+        .location {
+            grid-column: 2 / 2;
+            grid-row: 1;
+        }
+
+        .contact-me {
+            grid-row: 3 / 3;
+            grid-column: 1 / 3;
+        }
+    }
+</style>

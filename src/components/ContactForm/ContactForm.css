@@ -1,0 +1,96 @@
+/* reset */
+#fs-frm input:not([type="submit"]),
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm fieldset,
+#fs-frm optgroup,
+#fs-frm label,
+#fs-frm #card-element:disabled {
+    font-family: inherit;
+    font-size: 100%;
+    color: var(--body-color);
+    border: none;
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    appearance: none;
+}
+
+#fs-frm label,
+#fs-frm legend,
+#fs-frm ::placeholder {
+    margin-bottom: 0.5rem;
+    padding-top: 0.2rem;
+    display: flex;
+    align-items: baseline;
+}
+
+/* border, padding, margin, width */
+#fs-frm input:not([type="submit"]),
+#fs-frm textarea {
+    border-radius: 10px;
+    background-color: var(--form-input-bg);
+}
+
+#fs-frm {
+    margin-top: 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#fs-frm #fs-frm-submit-button {
+    width: max-content;
+    align-self: end;
+}
+
+/* Chrome shenanigans */
+input:autofill {
+    box-shadow: 0 0 0 1000px var(--form-input-bg) inset !important;
+    -webkit-text-fill-color: var(--body-color) !important;
+    transition: background-color 600000s 0s, color 600000s 0s !important;
+}
+
+#fs-frm textarea {
+    resize: vertical;
+}
+
+#fs-frm input:not([type="submit"]) {
+    border-radius: 10px;
+    height: 2rem;
+}
+
+#fs-frm input[type="text"],
+#fs-frm input[type="email"],
+#fs-frm textarea {
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#fs-frm input:focus,
+#fs-frm select:focus,
+#fs-frm textarea:focus {
+    background-color: transparent;
+    outline-style: solid;
+    outline-width: thin;
+    outline-color: var(--accent-color);
+    outline-offset: -1px;
+}
+
+#fs-frm #fs-frm-form-status {
+    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+#fs-frm #fs-frm-form-status::first-letter {
+    text-transform: capitalize;
+}
+
+#fs-frm .error {
+    margin: 0.5rem 0 0.5rem 0.2rem;
+    color: red;
+}

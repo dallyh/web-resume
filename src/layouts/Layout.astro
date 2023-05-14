@@ -3,6 +3,7 @@ import LanguageSelectDialog from "../components/LanguageSelectDialog.astro";
 import ModalDialog from "../components/ModalDialog.astro";
 import { t } from "i18next";
 import { HeadHrefLangs } from "astro-i18next/components";
+import i18next from "i18next";
 import "../styles/global.css";
 
 export interface Props {
@@ -14,7 +15,7 @@ const underConstruction = import.meta.env.UNDER_CONSTRUCTION;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={i18next.language}>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -32,7 +33,7 @@ const underConstruction = import.meta.env.UNDER_CONSTRUCTION;
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
             integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
             crossorigin="anonymous"
-            referrerPolicy="no-referrer"
+            referrerpolicy="no-referrer"
         />
         <!-- Prevent FOUC -->
         <script src="/scripts/ThemeToggle.js" is:inline></script>
@@ -47,6 +48,8 @@ const underConstruction = import.meta.env.UNDER_CONSTRUCTION;
         <!-- Adobe Muli font -->
         <link rel="preload" href="https://use.typekit.net/bxg2com.css" as="style" />
         <link rel="stylesheet" href="https://use.typekit.net/bxg2com.css" />
+        <!-- Cloudflare Web Analytics -->
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a1158ee432a4628867a6ad3f76eafe7"}'></script>
     </head>
     <body>
         {
@@ -60,7 +63,8 @@ const underConstruction = import.meta.env.UNDER_CONSTRUCTION;
         }
         <LanguageSelectDialog />
         <slot />
-    </body><script>
+    </body>
+    <script>
         import { InitializeTooltips } from "../scripts/tooltips";
         import "../scripts/timeline";
         import "../scripts/skillcard";

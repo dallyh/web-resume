@@ -5,6 +5,7 @@ import "../styles/styles.css";
 import "../styles/print.css";
 import Navigation from "../components/Navigation.astro";
 import i18next, { t, changeLanguage } from "i18next";
+import Contact from "../components/Contact.astro";
 
 changeLanguage("cs");
 ---
@@ -119,14 +120,6 @@ changeLanguage("cs");
                 </p>
 
                 <div class="list-card exp">
-                    <div class="exp-text">+ 1 {t("index:SkillsYears")}</div>
-                    <div class="exp-description">
-                        <h3>{t("index:SkillsOOP")}</h3>
-                        <span>{t("index:SkillsOOPDescription")}</span>
-                    </div>
-                </div>
-
-                <div class="list-card exp">
                     <div class="exp-text">+ 2 {t("index:SkillsYears")}</div>
                     <div class="exp-description">
                         <h3>{t("index:SkillsBA")}</h3>
@@ -147,6 +140,14 @@ changeLanguage("cs");
                     <div class="exp-description">
                         <h3>{t("index:SkillsDatabases")}</h3>
                         <span>{t("index:SkillsDatabasesDescription")}</span>
+                    </div>
+                </div>
+
+                <div class="list-card exp">
+                    <div class="exp-text">+ 1 {t("index:SkillsYears")}</div>
+                    <div class="exp-description">
+                        <h3>{t("index:SkillsOOP")}</h3>
+                        <span>{t("index:SkillsOOPDescription")}</span>
                     </div>
                 </div>
 
@@ -323,6 +324,10 @@ changeLanguage("cs");
                         <p class="description">{t("index:HighSchoolNaJizdarneDescription")}</p>
                     </div>
                 </div>
+            </section>
+            <h2 class="section-title">{t("navigation:Nav_Contact")}</h2>
+            <section id="contact">
+                <Contact/>
             </section>
         </main>
         <!-- Footer -->

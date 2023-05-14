@@ -9,5 +9,10 @@
   "PopupClose": "Close",
   "Description": "Personal website used as a resume",
   "DownloadResume": "Download resume",
-  "BackButton": "Back"
+  "BackButton": "Back",
+  "SocialLinks": "Social",
+  "Location": "Location",
+  "LeaveMeAMessage": "Leave me a message",
+  "CzechRepublic": "Czech Republic",
+  "MSRegion": "Moravian-Silesian Region"
 }

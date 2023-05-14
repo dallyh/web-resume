@@ -5,6 +5,7 @@ import "../../styles/styles.css";
 import "../../styles/print.css";
 import Navigation from "../../components/Navigation.astro";
 import i18next, { t, changeLanguage } from "i18next";
+import Contact from "../../components/Contact.astro";
 
 changeLanguage("en");
 ---
@@ -323,6 +324,10 @@ changeLanguage("en");
                         <p class="description">{t("index:HighSchoolNaJizdarneDescription")}</p>
                     </div>
                 </div>
+            </section>
+            <h2 class="section-title">{t("navigation:Nav_Contact")}</h2>
+            <section id="contact">
+                <Contact/>
             </section>
         </main>
         <!-- Footer -->

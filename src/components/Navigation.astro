@@ -25,6 +25,9 @@ import i18next, { t, changeLanguage } from "i18next";
             <a href="#experience" class="header-menu-item menu-hover-effect">
                 <span>04</span>{t("navigation:Nav_Experience")}
             </a>
+            <a href="#contact" class="header-menu-item menu-hover-effect">
+                <span>05</span>{t("navigation:Nav_Contact")}
+            </a>
         </div>
         <div class="header-user-settings">
             <ThemeToggle />
@@ -54,6 +57,9 @@ import i18next, { t, changeLanguage } from "i18next";
             </a>
             <a href="#experience" class="aside-menu-item menu-hover-effect">
                 <span>04</span>{t("navigation:Nav_Experience")}
+            </a>
+            <a href="#contact" class="aside-menu-item menu-hover-effect">
+                <span>05</span>{t("navigation:Nav_Contact")}
             </a>
         </div>
         <div class="aside-user-settings">
@@ -152,7 +158,7 @@ import i18next, { t, changeLanguage } from "i18next";
     .header-menu .header-menu-item a {
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 980px) {
         body:not(.nav-active) .header-container.hidden {
             transform: translateY(-100%);
         }
@@ -569,6 +575,8 @@ import i18next, { t, changeLanguage } from "i18next";
 
             // Hammertime (swipe gestures for nav menu)
             const hammerTime = () => {
+                //@ts-ignore -- removes the default user-select:none from HammerJS init.
+                delete Hammer.defaults.cssProps.userSelect;
                 let hammertime = new Hammer(document.body);
                 hammertime.get("swipe").set({ direction: Hammer.DIRECTION_HORIZONTAL });
                 hammertime.on("swipe", function (ev) {
