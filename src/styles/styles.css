@@ -17,10 +17,9 @@
     padding: 0rem 1rem 0rem 1rem;
 }
 
-.main-grid section:not(:first-of-type){
+.main-grid section:not(:first-of-type) {
     padding-bottom: 5rem;
 }
-
 
 .section-footer {
     padding-bottom: 1rem;
@@ -60,7 +59,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    grid-template-rows: repeat(3, min-content); 
+    grid-template-rows: repeat(3, min-content);
     padding-bottom: 1rem;
     scroll-margin-top: 100px;
     min-height: calc(100vh - var(--header-size) - 1.5rem);
@@ -83,13 +82,71 @@
 .hero > p {
     font-weight: 800;
     letter-spacing: 0.35rem;
-    margin-top: 0.5rem
+    margin-top: 0.5rem;
+    position: relative;
+    width: max-content;
 }
+
+.hero > p::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background: var(--body-bg);
+    animation: typing 1s steps(19) forwards;
+    animation-delay: 300ms;
+}
+
+.profile-picture-wrapper {
+    position: relative;
+    margin-top: 2rem;
+}
+
+/*
+.disc {
+    --color-cyan: #15a7ed;
+    --color-midnight: #092344;
+    --color-velvet: #8e00ff;
+    position: absolute;
+    top: -19px;
+    left: -16px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: 50% 50%;
+    background: var(--accent-color);
+    animation: pulse 2s cubic-bezier(0.5, 0.5, 0, 1);
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+
+ .disc-1 {
+    z-index: -1;
+    background: red;
+    animation: pulse 2s 0.75s cubic-bezier(.5,.5,0,1);
+}
+
+.disc-2 {
+    z-index: -2;
+    background: blue;
+    animation: pulse 2s 1.5s cubic-bezier(.5,.5,0,1);
+}
+
+.disc-3 {
+    z-index: -3;
+    background: purple;
+    animation: pulse 2s 2.2s cubic-bezier(.5,.5,0,1);
+} */
 
 .profile-picture {
     display: block;
-    width: 10rem;
-    height: 10rem;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
     border-radius: 50%;
     border: 2px solid rgba(var(--accent-color-rgb), 0.8);
     margin-bottom: 2rem;
@@ -111,6 +168,8 @@
     background-color: var(--accent-color);
     left: 0;
     bottom: 0;
+    animation: scaleUpX 300ms ease-in-out;
+    transform-origin: left;
 }
 
 .name-header {
@@ -242,12 +301,11 @@
     max-height: 40px;
 }
 
-
 @media (max-width: 768px) {
     .cert-card {
         gap: 1rem;
     }
-    
+
     .cert-card p {
         margin: 0;
         max-width: 90%;
@@ -317,7 +375,7 @@ html[data-theme="dark"] .cert-card-logo {
     height: calc(100% + 30px);
     left: 1px;
     top: 0;
-    background-color: #4f4f4f
+    background-color: #4f4f4f;
 }
 
 .timeline-content:after {
