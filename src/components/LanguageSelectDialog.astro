@@ -73,7 +73,7 @@ const capitalizeFirstLetter = (str: string) => {
     const path = window.location.pathname;
     const url = window.location.origin;
     const defaultLanguage = AstroI18nextConfig.defaultLocale;
-    const languageSelect = document.querySelector("dialog-languages") as HTMLElement;
+    const languageSelect = document.querySelector(".dialog-languages") as HTMLElement;
 
     // Check for changes on links
     const languageSelectorLinks = document.querySelectorAll("[data-js-language]");
@@ -144,6 +144,7 @@ const capitalizeFirstLetter = (str: string) => {
     // Check for cancel button
     languageDialog.addEventListener("close", () => {
         let currentLanguage = languageSelect.getAttribute("data-js-current-language");
+        
 
         if (currentLanguage === null) {
             console.error("Could not find 'data-js-current-language' attribute.");
