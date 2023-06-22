@@ -6,126 +6,48 @@ import "../../styles/print.css";
 import Navigation from "../../components/Navigation.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import Contact from "../../components/Contact.astro";
+import SkillCards from "../../components/SkillCards.astro";
 
 changeLanguage("en");
 ---
 
 <Layout title={`${t("shared:NamePossesive")} ${t("shared:Resume")}`}>
     <Navigation />
-    <div class="page-wrapper">
+    <div class="page-wrapper has-header">
         <main class="main-grid">
-            <section class="about-container" id="about">
+            <section class="hero-container" id="hero">
                 <!-- Introduction -->
                 <div class="hero">
-                    <div class="profile">
-                        <img class="img-profile" tabindex="0" src="/assets/img/profile.png" alt="Profile picture" />
-                        <div class="name">
-                            <h1 class="name-header">
-                                <strong>Dalibor</strong> Hon
-                            </h1>
-                            <span class="job-title">{t("index:CurrentPosition")}</span>
-                        </div>
-                    </div>
+                    <img class="profile-picture" src="/assets/img/profile.png" />
+                    <h1 class="hero-title">
+                        Dalibor <br />
+                        Hon
+                    </h1>
+                    <p>BUSINESS CONSULTANT</p>
                 </div>
-                <div class="social">
-                    <button class="button" onclick="window.print()">{t("shared:DownloadResume")}</button>
-                    <a href="https://www.linkedin.com/in/dalibor-hon/" target="_blank">
-                        <button tabindex="-1" class="button">
-                            <i class="fa-brands fa-linkedin"></i>
-                            LinkedIn
-                        </button>
+                <div class="section-footer noprint">
+                    <a class="section-next-chapter">
+                        <span class="gg-mouse mouse-anim"></span>
                     </a>
                 </div>
+                <!-- 
                 <h2 class="lead">{t("index:Lead")}</h2>
                 <p class="about-me">{t("index:AboutIntroduction")}</p>
-                <!-- Achievements -->
-                <div class="skill-cards-container pagebreak">
-                    <div class="skill-card" tabindex="0">
-                        <div class="skill">
-                            <div class="skill-level">
-                                <h2 class="noprint" data-count="45">--</h2>
-                                <h2 class="print">45</h2>
-                                <span>+</span>
-                            </div>
-                            <div class="skill-meta">
-                                <h3>{t("index:CardProjectTitle")}</h3>
-                                <span>{t("index:CardProjectDescription")}</span>
-                            </div>
-                        </div>
-                        <p class="skill-click">{t("index:CardClick")}</p>
-                        <div class="skill-details">
-                            <p>{t("index:CardProjectDetail")}</p>
-                        </div>
-                    </div>
-                    <div class="skill-card" tabindex="0">
-                        <div class="skill">
-                            <div class="skill-level">
-                                <h2 class="noprint" data-count="50">--</h2>
-                                <h2 class="print">50</h2>
-                                <span>%</span>
-                            </div>
-                            <div class="skill-meta">
-                                <h3>{t("index:CardBATitle")}</h3>
-                                <span>{t("index:CardBADescription")}</span>
-                            </div>
-                        </div>
-                        <p class="skill-click">{t("index:CardClick")}</p>
-                        <div class="skill-details">
-                            <p>{t("index:CardBADetail")}</p>
-                        </div>
-                    </div>
-                    <div class="skill-card" tabindex="0">
-                        <div class="skill">
-                            <div class="skill-level">
-                                <h2 class="noprint" data-count="30">--</h2>
-                                <h2 class="print">30</h2>
-                                <span>%</span>
-                            </div>
+                 -->
+            </section>
 
-                            <div class="skill-meta">
-                                <h3>{t("index:CardImplementationTitle")}</h3>
-                                <span>{t("index:CardImplementationDescription")}</span>
-                            </div>
-                        </div>
-                        <p class="skill-click">{t("index:CardClick")}</p>
-                        <div class="skill-details">
-                            <p>{t("index:CardImplementationDetail")}</p>
-                        </div>
-                    </div>
-                    <div class="skill-card" tabindex="0">
-                        <div class="skill">
-                            <div class="skill-level">
-                                <h2 class="noprint" data-count="20">--</h2>
-                                <h2 class="print">20</h2>
-                                <span>%</span>
-                            </div>
-                            <div class="skill-meta">
-                                <h3>{t("index:CardDevTitle")}</h3>
-                                <span>{t("index:CardDevDescription")}</span>
-                            </div>
-                        </div>
-                        <p class="skill-click">{t("index:CardClick")}</p>
-                        <div class="skill-details">
-                            <p>{t("index:CardDevDetail")}</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Skill cards (facts) section -->
+            <section class="facts pagebreak" id="facts">
+                <h2 class="section-title">{t("navigation:Nav_Facts")}</h2>
+                <SkillCards />
             </section>
 
             <!-- Skills section -->
-            <h2 class="section-title pagebreak">{t("index:SectionSkills")}</h2>
             <section class="skills" id="skills">
+                <h2 class="section-title pagebreak">{t("index:SectionSkills")}</h2>
                 <p>
                     {t("index:SkillsIntroduction")}
                 </p>
-
-                <div class="list-card exp">
-                    <div class="exp-text">+ 1 {t("index:SkillsYears")}</div>
-                    <div class="exp-description">
-                        <h3>{t("index:SkillsOOP")}</h3>
-                        <span>{t("index:SkillsOOPDescription")}</span>
-                    </div>
-                </div>
 
                 <div class="list-card exp">
                     <div class="exp-text">+ 2 {t("index:SkillsYears")}</div>
@@ -151,8 +73,16 @@ changeLanguage("en");
                     </div>
                 </div>
 
+                <div class="list-card exp">
+                    <div class="exp-text">+ 1 {t("index:SkillsYears")}</div>
+                    <div class="exp-description">
+                        <h3>{t("index:SkillsOOP")}</h3>
+                        <span>{t("index:SkillsOOPDescription")}</span>
+                    </div>
+                </div>
+
                 <div class="list-card">
-                    <h3>{t("index:SkillsProgrammingLangAndTools")} <i class="fa-solid fa-circle-info" data-tooltip="top" data-tooltip-text={t("index:HoverIconsTooltip")}></i></h3>
+                    <h3>{t("index:SkillsProgrammingLangAndTools")} <i class="fa-solid fa-circle-info noprint" data-tooltip="top" data-tooltip-text={t("index:HoverIconsTooltip")}></i></h3>
 
                     <ul class="dev-list-inline">
                         <li class="dev-list-inline-item" tabindex="0" data-tooltip="bottom" data-tooltip-text="HTML5">
@@ -240,94 +170,105 @@ changeLanguage("en");
             </section>
 
             <!-- Certifications section -->
-            <h2 class="section-title pagebreak">{t("index:SectionCertifications")}</h2>
             <section class="certifications" id="certifications">
-                <div class="list-card certifications">
-                    <ul class="fa-ul">
-                        <li>
-                            <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
-                            Microsoft Certified: Power Platform Fundamentals (PL-900)
-                        </li>
-                        <li>
-                            <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
-                            Microsoft Certified: Microsoft Dynamics 365 Fundamentals (PL-900)
-                        </li>
-                        <li>
-                            <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
-                            ABBYY FlexiCapture 12 Basic
-                        </li>
-                        <li>
-                            <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
-                            K2 IT Developer
-                        </li>
-                        <li>
-                            <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
-                            K2 Business Analyst
-                        </li>
-                        <li>
-                            <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
-                            K2 Citizen Developer
-                        </li>
-                        <li>
-                            <span class="fa-li text-primary"><i class="fas fa-trophy"></i></span>
-                            M-Files Solution Engineer
-                        </li>
-                    </ul>
+                <h2 class="section-title pagebreak">{t("index:SectionCertifications")}</h2>
+                <div class="certifications-list">
                     <p><Fragment set:html={t("index:CertLinkedIn")} /></p>
+                    <div class="certifications-grid">
+                        <div class="cert-card">
+                            <img class="cert-card-logo" src="/assets/img/company-logos/MSFT_BIG.png" />
+                            <p class="cer-card-description">Power Platform Fundamentals (PL-900)</p>
+                        </div>
+                        <div class="cert-card">
+                            <img class="cert-card-logo" src="/assets/img/company-logos/MSFT_BIG.png" />
+                            <p class="cer-card-description">Microsoft Dynamics 365 Fundamentals (PL-900)</p>
+                        </div>
+                        <div class="cert-card">
+                            <img class="cert-card-logo" src="/assets/img/company-logos/ABBYY.png" />
+                            <p class="cer-card-description">FlexiCapture 12 Basic</p>
+                        </div>
+                        <div class="cert-card">
+                            <img class="cert-card-logo" src="/assets/img/company-logos/ABBYY.png" />
+                            <p class="cer-card-description">Vantage Certified Business Analyst</p>
+                        </div>
+                        <div class="cert-card">
+                            <img class="cert-card-logo nintex" src="/assets/img/company-logos/nintex-black.svg" />
+                            <p class="cer-card-description">K2 IT Developer</p>
+                        </div>
+                        <div class="cert-card">
+                            <img class="cert-card-logo nintex" src="/assets/img/company-logos/nintex-black.svg" />
+                            <p class="cer-card-description">K2 Business Analyst</p>
+                        </div>
+                        <div class="cert-card">
+                            <img class="cert-card-logo nintex" src="/assets/img/company-logos/nintex-black.svg" />
+                            <p class="cer-card-description">K2 Citizen Developer</p>
+                        </div>
+                        <div class="cert-card">
+                            <img class="cert-card-logo" src="/assets/img/company-logos/m-files.png" />
+                            <p class="cer-card-description">M-Files Solution Engineer</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Life timeline -->
-            <h2 class="section-title pagebreak">{t("index:TimelineTitle")}</h2>
             <section class="timeline" id="experience">
-                <div class="timeline-card">
-                    <h3>{t("index:SectionExperience")}</h3>
-                    <div class="meta">
-                        <p class="title">ECM Business Consultant</p>
-                        <p>Konica Minolta IT Solutions Czech s.r.o</p>
-                        <span class="date">{t("index:ECMBusinessConsultantDate")}</span>
-                        <p class="description">
-                            {t("index:ECMBusinessConsultantDescription")}
-                        </p>
+                <h2 class="section-title pagebreak">{t("index:TimelineTitle")}</h2>
+                <div class="timeline-cards">
+                    <div class="timeline-card">
+                        <h3>{t("index:SectionExperience")}</h3>
+                        <div class="timeline-content">
+                            <div class="meta">
+                                <p class="title">ECM Business Consultant</p>
+                                <p>Konica Minolta IT Solutions Czech s.r.o</p>
+                                <span class="date">{t("index:ECMBusinessConsultantDate")}</span>
+                                <p class="description">
+                                    {t("index:ECMBusinessConsultantDescription")}
+                                </p>
+                            </div>
+                            <div class="meta">
+                                <p class="title">Analyst, Shared Services</p>
+                                <p>MONETA Money Bank a.s.</p>
+                                <span class="date">{t("index:MonetaAnalystDate")}</span>
+                                <p class="description">
+                                    {t("index:MonetaAnalystDescription")}
+                                </p>
+                            </div>
+                            <div class="meta">
+                                <p class="title">Administrator End User Services, IT</p>
+                                <p>MONETA Money Bank a.s.</p>
+                                <span class="date">{t("index:MonetaEndUserServicesDate")}</span>
+                                <p class="description">
+                                    {t("index:MonetaEndUserServicesDescription")}
+                                </p>
+                            </div>
+                            <div class="meta">
+                                <p class="title">Motherboard technician</p>
+                                <p>ASUS Czech Service s.r.o.</p>
+                                <span class="date">{t("index:AsusTechnicianDate")}</span>
+                                <p class="description">
+                                    {t("index:AsusTechnicianDescription")}
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="meta">
-                        <p class="title">Analyst, Shared Services</p>
-                        <p>MONETA Money Bank a.s.</p>
-                        <span class="date">{t("index:MonetaAnalystDate")}</span>
-                        <p class="description">
-                            {t("index:MonetaAnalystDescription")}
-                        </p>
-                    </div>
-                    <div class="meta">
-                        <p class="title">Administrator End User Services, IT</p>
-                        <p>MONETA Money Bank a.s.</p>
-                        <span class="date">{t("index:MonetaEndUserServicesDate")}</span>
-                        <p class="description">
-                            {t("index:MonetaEndUserServicesDescription")}
-                        </p>
-                    </div>
-                    <div class="meta">
-                        <p class="title">Motherboard technician</p>
-                        <p>ASUS Czech Service s.r.o.</p>
-                        <span class="date">{t("index:AsusTechnicianDate")}</span>
-                        <p class="description">
-                            {t("index:AsusTechnicianDescription")}
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-card pagebreak">
-                    <h3>{t("index:SectionEducation")}</h3>
-                    <div class="meta">
-                        <p class="title">{t("index:HighSchoolNaJizdarne")}</p>
-                        <p>{t("index:MaturityDiploma")}</p>
-                        <span class="date">2010 - 2014</span>
-                        <p class="description">{t("index:HighSchoolNaJizdarneDescription")}</p>
+                    <div class="timeline-card pagebreak">
+                        <h3>{t("index:SectionEducation")}</h3>
+                        <div class="timeline-content">
+                            <div class="meta">
+                                <p class="title">{t("index:HighSchoolNaJizdarne")}</p>
+                                <p>{t("index:MaturityDiploma")}</p>
+                                <span class="date">2010 - 2014</span>
+                                <p class="description">{t("index:HighSchoolNaJizdarneDescription")}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <h2 class="section-title">{t("navigation:Nav_Contact")}</h2>
+
             <section id="contact">
-                <Contact/>
+                <h2 class="section-title">{t("navigation:Nav_Contact")}</h2>
+                <Contact />
             </section>
         </main>
         <!-- Footer -->

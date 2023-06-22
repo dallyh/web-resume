@@ -2,7 +2,7 @@
 import LanguageSelectDialog from "../components/LanguageSelectDialog.astro";
 import ModalDialog from "../components/ModalDialog.astro";
 import { t } from "i18next";
-import { HeadHrefLangs } from "astro-i18next/components";
+import HeadHrefLangs from "../components/HeadHrefLangs.astro";
 import i18next from "i18next";
 import "../styles/global.css";
 
@@ -18,11 +18,10 @@ const underConstruction = import.meta.env.UNDER_CONSTRUCTION;
 <html lang={i18next.language}>
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={t("shared:Description")} />
-        <link rel="alternate" hreflang="x-default" href={Astro.url.origin} />
         <HeadHrefLangs />
         <title>{title}</title>
         <!-- Dev icons -->
@@ -49,7 +48,9 @@ const underConstruction = import.meta.env.UNDER_CONSTRUCTION;
         <link rel="preload" href="https://use.typekit.net/bxg2com.css" as="style" />
         <link rel="stylesheet" href="https://use.typekit.net/bxg2com.css" />
         <!-- Cloudflare Web Analytics -->
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a1158ee432a4628867a6ad3f76eafe7"}'></script>
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6a1158ee432a4628867a6ad3f76eafe7"}'></script>
+        <!-- css.gg -->
+        <link href="https://css.gg/css" rel="stylesheet" />
     </head>
     <body>
         {
@@ -63,15 +64,14 @@ const underConstruction = import.meta.env.UNDER_CONSTRUCTION;
         }
         <LanguageSelectDialog />
         <slot />
-    </body>
-    <script>
-        import { InitializeTooltips } from "../scripts/tooltips";
-        import "../scripts/timeline";
-        import "../scripts/skillcard";
-        import "../scripts/counters";
-        import "../scripts/index";
-        import "../scripts/dropdown"
+        <script>
+            import { InitializeTooltips } from "../scripts/tooltips";
+            import "../scripts/timeline";
+            import "../scripts/counters";
+            import "../scripts/index";
+            import "../scripts/dropdown";
 
-        InitializeTooltips();
-    </script>
+            InitializeTooltips();
+        </script>
+    </body>
 </html>

@@ -60,8 +60,8 @@ const contactForm = () => {
                     setErrorMessage((prevState) => [
                         ...prevState,
                         {
-                            type: e.code,
-                            message: e.message,
+                            type: e.code?? "UNDEFINED",
+                            message: e.message ,
                         },
                     ]);
                     break;

@@ -4,6 +4,15 @@
 }
 
 @media print {
+
+    body {
+        font-size: 11px;
+    }
+
+    .main-grid section:not(:first-of-type){
+        padding-bottom: 0;
+    }
+
     .noprint {
         display: none !important;
     }
@@ -47,12 +56,47 @@
         display: none;
     }
 
-    .timeline > .timeline-card .meta::before {
+    .timeline .timeline-cards > .timeline-card .meta::before {
         animation: none;
         transform: scaleY(1);
     }
 
+    .timeline .timeline-cards {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
     .footer-container {
         display: none;
+    }
+
+    .cert-card-logo {
+        filter: none !important;
+    }
+
+    .section-title {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .skill-cards-container {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .skill-cards-container .card .item.top-item {
+        min-height: 0 !important;
+    }
+
+    .skill-cards-container .card .item.top-item {
+        min-height: 0 !important;
+    }
+
+    .skill-cards-container .card .item.detail {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+
+    .skill-cards-container .card .item.top-item .content{
+        border-radius: 15px 15px 0px 0px !important;
     }
 }

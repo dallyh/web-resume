@@ -1,0 +1,287 @@
+---
+import i18next, { t, changeLanguage } from "i18next";
+---
+
+<div class="skill-cards-container">
+    <div class="card">
+        <div class="item top-item">
+            <div class="content">
+                <div class="skill-level">
+                    <h2 class="noprint" data-count="45">--</h2>
+                    <h2 class="print">45</h2>
+                    <span>+</span>
+                </div>
+                <h2 class="skill-title">{t("index:CardProjectTitle")}</h2>
+                <span class="skill-meta">{t("index:CardProjectDescription")}</span>
+            </div>
+        </div>
+        <div class="item detail">
+            <p>{t("index:CardProjectDetail")}</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="item top-item">
+            <div class="content">
+                <div class="skill-level">
+                    <h2 class="noprint" data-count="50">--</h2>
+                    <h2 class="print">50</h2>
+                    <span>%</span>
+                </div>
+                <h2 class="skill-title">{t("index:CardBATitle")}</h2>
+                <span class="skill-meta">{t("index:CardBADescription")}</span>
+            </div>
+        </div>
+        <div class="item detail">
+            <p>{t("index:CardBADetail")}</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="item top-item">
+            <div class="content">
+                <div class="skill-level">
+                    <h2 class="noprint" data-count="30">--</h2>
+                    <h2 class="print">30</h2>
+                    <span>%</span>
+                </div>
+                <h2 class="skill-title">{t("index:CardImplementationTitle")}</h2>
+                <span class="skill-meta">{t("index:CardImplementationDescription")}</span>
+            </div>
+        </div>
+        <div class="item detail">
+            <p>{t("index:CardImplementationDetail")}</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="item top-item">
+            <div class="content">
+                <div class="skill-level">
+                    <h2 class="noprint" data-count="20">--</h2>
+                    <h2 class="print">20</h2>
+                    <span>%</span>
+                </div>
+                <h2 class="skill-title">{t("index:CardDevTitle")}</h2>
+                <span class="skill-meta">{t("index:CardDevDescription")}</span>
+            </div>
+        </div>
+        <div class="item detail">
+            <p>{t("index:CardDevDetail")}</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .skill-cards-container {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+        position: relative;
+        transition: all 400ms;
+    }
+
+    @media (max-width: 1366px) {
+        .skill-cards-container {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-auto-flow: row;
+            margin-top: unset;
+            margin-bottom: unset;
+        }
+    }
+
+    @media (max-width: 868px) {
+        .skill-cards-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-auto-flow: row;
+            margin-top: unset;
+            margin-bottom: unset;
+        }
+    }
+
+    .skill-cards-container .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .skill-cards-container .card .item {
+        transition: 300ms ease-in-out;
+    }
+
+    .skill-cards-container .card .item.top-item {
+        position: relative;
+        background-color: var(--body-bg);
+        border: 2px solid transparent;
+        z-index: 1;
+        min-height: 100%;
+    }
+
+    .skill-cards-container .card.animated .item.top-item {
+        animation: cardOpen 300ms ease-in-out both;
+    }
+
+    .skill-cards-container .card.animated:nth-of-type(2) .item.top-item {
+        animation-delay: 300ms;
+    }
+
+    .skill-cards-container .card.animated:nth-of-type(3) .item.top-item {
+        animation-delay: 600ms;
+    }
+
+    .skill-cards-container .card.animated:nth-of-type(4) .item.top-item {
+        animation-delay: 900ms;
+    }
+
+    .skill-cards-container .card .item.top-item .content {
+        transition: 0.5s;
+        padding: 1rem;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        gap: 0.5rem;
+        grid-template-rows: repeat(3, min-content);
+        border-radius: 15px 15px 15px 15px;
+        background-color: rgba(var(--accent-color-rgb), 0.8);
+    }
+
+    .skill-cards-container .card.animated .item.top-item .content {
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    @media (max-width: 868px) {
+        .skill-cards-container .card .item.top-item .content {
+            grid-template-rows: unset;
+            gap: 0.5rem;
+        }
+    }
+
+    .skill-cards-container .card .item.top-item .content .skill-level {
+        display: flex;
+        gap: 0.25rem;
+        max-width: 190px;
+    }
+
+    .skill-cards-container .card .item.top-item .content .skill-level h2 {
+        font-size: 5rem;
+        font-weight: 300;
+        display: inline-block;
+        letter-spacing: -5px;
+        color: #000;
+    }
+
+    .skill-cards-container .card .item.top-item .content .skill-level span {
+        color: #000;
+        font-size: 2rem;
+        font-weight: 300;
+        vertical-align: top;
+    }
+
+    .skill-cards-container .card .item.top-item .content .skill-title {
+        color: #000;
+        font-size: 1.5rem;
+    }
+
+    .skill-cards-container .card .item.top-item .content .skill-meta {
+        color: #000;
+        margin-top: auto;
+    }
+
+    .skill-cards-container .card .item.detail {
+        position: relative;
+        background-color: var(--skill-card-bg);
+        padding: 25px;
+        border-radius: 0px 0px 15px 15px;
+        flex-grow: 1;
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .skill-cards-container .card.animated .item.detail {
+        animation: cardLoad 900ms ease-in-out both;
+    }
+
+    .skill-cards-container .card.animated:nth-of-type(2) .item.detail {
+        animation-delay: 300ms;
+    }
+
+    .skill-cards-container .card.animated:nth-of-type(3) .item.detail {
+        animation-delay: 600ms;
+    }
+
+    .skill-cards-container .card.animated:nth-of-type(4) .item.detail {
+        animation-delay: 900ms;
+    }
+
+    .skill-cards-container .card .item.detail::before {
+        content: "";
+        border-radius: inherit;
+        height: 100%;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        z-index: 2;
+        background: radial-gradient(450px circle at var(--mouse-x) var(--mouse-y), var(--skill-card-hover-radial-color), transparent 40%);
+        opacity: 0;
+        transition: opacity 300ms;
+    }
+
+    .skill-cards-container .card .item.detail:hover::before {
+        opacity: 1;
+    }
+
+    .skill-cards-container .card .item.detail p {
+        padding: 0em;
+        margin: 0em;
+        color: var(--body-color);
+        font-size: 0.85rem;
+    }
+</style>
+
+<script>
+    const skillCardsDetails = document.querySelectorAll(".item.detail");
+    const skillCards = document.querySelectorAll(".skill-cards-container .card");
+
+    let observerOptions = {
+        root: document.querySelector("#scrollArea"),
+        rootMargin: "0px",
+        threshold: [0.85, 0.5],
+    };
+
+    let observer = new IntersectionObserver((entires, observer) => {
+        entires.forEach((entry) => {
+            if (entry.isIntersecting) {
+                let card = entry.target;
+                card.classList.add("animated");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const handleOnMouseMove = (e: MouseEvent) => {
+        let target = e.target as HTMLElement;
+        const rect = target.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+        target.style.setProperty("--mouse-x", `${x}px`);
+        target.style.setProperty("--mouse-y", `${y}px`);
+    };
+
+    skillCards.forEach((card) => {
+        observer.observe(card);
+    });
+
+    skillCardsDetails.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+            handleOnMouseMove(e as MouseEvent);
+        });
+    });
+
+    export {};
+</script>

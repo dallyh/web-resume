@@ -21,6 +21,7 @@ class DropdownHandler {
             var button = e as HTMLButtonElement;
             var target = e.getAttribute("data-dropdown-target") as string;
             var dropdown = document.querySelector(target) as HTMLElement;
+            var placement = button.dataset.dropdownPlacement === undefined ? "bottom" : button.dataset.dropdownPlacement;
 
             if (!dropdown) {
                 console.log("Dropdown for target: " + target + " was not found.");
@@ -29,7 +30,7 @@ class DropdownHandler {
             console.log("Found dropdown target" + target);
 
             var popperInstance = createPopper(button, dropdown, {
-                placement: "bottom" as Placement,
+                placement: placement as Placement,
                 strategy: "fixed",
                 modifiers: [
                     offsetModifier,

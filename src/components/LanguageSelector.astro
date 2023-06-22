@@ -10,6 +10,8 @@ import ISO6991 from "iso-639-1";
 export interface Props extends astroHTML.JSX.SelectHTMLAttributes {
     showFlag?: boolean;
     animate?: boolean;
+    showTitle?: boolean;
+    placement?: string;
     buttonId: string;
     dropdownId: string;
 }
@@ -17,7 +19,7 @@ export interface Props extends astroHTML.JSX.SelectHTMLAttributes {
 const supportedLanguages = i18next.languages;
 const currentLanguage = i18next.language;
 const { pathname } = Astro.url;
-const { showFlag = false, animate = true, dropdownId, buttonId, ...attributes } = Astro.props;
+const { showFlag = false, animate = true, showTitle = true, placement="bottom", dropdownId, buttonId, ...attributes } = Astro.props;
 const capitalizeFirstLetter = (str: string) => {
     const capitalized = str.charAt(0).toUpperCase() + str.slice(1);
     return capitalized;
@@ -25,8 +27,8 @@ const capitalizeFirstLetter = (str: string) => {
 ---
 
 <div class="language-selector">
-    <button class:list={["dropdown", {"menu-hover-effect": animate}]} data-dropdown-target={`#${dropdownId}`} id={buttonId}>
-        {(showFlag ? localeEmoji(currentLanguage) + " " : "") + capitalizeFirstLetter(ISO6991.getNativeName(currentLanguage))}
+    <button class:list={["dropdown", {"menu-hover-effect": animate}]} data-dropdown-target={`#${dropdownId}`} data-dropdown-placement={placement} id={buttonId}>
+        {(showFlag ? localeEmoji(currentLanguage) + " " : "") + (showTitle ? capitalizeFirstLetter(ISO6991.getNativeName(currentLanguage)): "")}
     </button>
     <ul class="dropdown-content" id={dropdownId} data-js-current-language={currentLanguage}>
         {

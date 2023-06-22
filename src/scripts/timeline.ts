@@ -1,4 +1,4 @@
-const timelineCards = document.querySelectorAll<HTMLElement>(".timeline-card");
+const timelineCards = document.querySelectorAll<HTMLElement>(".timeline-content");
 
 let observerOptions = {
     root: document.querySelector("#scrollArea"),
