@@ -313,9 +313,18 @@
         font-size: 0.8rem;
     }
 
-    .cert-card-logo {
-        max-width: 120px;
-        max-height: 35px;
+    .cert-card-logo:not(.nintex) {
+        width: 125px;
+        height: 25px;
+    }
+
+    .cert-card-logo.nintex {
+        width: 130px;
+    }
+
+    .cert-card-logo.abbyy {
+        width: 120px;
+        height: unset;
     }
 }
 

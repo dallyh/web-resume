@@ -1,2 +1,2 @@
-/// <reference types="astro/client" />
+/// <reference types="astro/client-image" />
 declare module 'locale-emoji';
