@@ -561,13 +561,21 @@ import i18next, { t, changeLanguage } from "i18next";
             };
 
             /**
-             * Hides header on scroll
+             * Handles header on scroll
              */
             var prevScrollpos = window.scrollY;
             var headerDiv = document.querySelector(".header-container") as HTMLElement;
-            const hideHeader = () => {
-                //var headerBottom = headerDiv.offsetTop + headerDiv.offsetHeight;
+            const headerOnScroll = () => {
                 window.onscroll = function () {
+
+                    // Makes the header smaller
+                    if (document.body.scrollTop >= 20 || document.documentElement.scrollTop >= 20) {
+                        headerDiv.classList.add("small");
+                    } else {
+                        headerDiv.classList.remove("small");
+                    }
+
+                    // Hides header on scroll                    
                     var currentScrollPos = window.scrollY;
 
                     /* if scrolling down, let it scroll out of view as normal */
@@ -579,17 +587,6 @@ import i18next, { t, changeLanguage } from "i18next";
                     }
 
                     prevScrollpos = currentScrollPos;
-                };
-            };
-
-            /** Sizes header on scroll */
-            const sizeHeaderOnScroll = () => {
-                window.onscroll = function () {
-                    if (document.body.scrollTop >= 20 || document.documentElement.scrollTop >= 20) {
-                        headerDiv.classList.add("small");
-                    } else {
-                        headerDiv.classList.remove("small");
-                    }
                 };
             };
 
@@ -641,8 +638,7 @@ import i18next, { t, changeLanguage } from "i18next";
                     openCloseNav();
                 });
                 navAnchorClick();
-                hideHeader();
-                sizeHeaderOnScroll();
+                headerOnScroll();
                 hammerTime();
 
                 // Scroll to element on page load if location contains hash
