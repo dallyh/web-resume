@@ -79,9 +79,9 @@ const contactForm = () => {
                 <form id="fs-frm" ref={formRef} name="simple-contact-form" onSubmit={handleSubmit}>
                     <fieldset id="fs-frm-inputs">
                         <label htmlFor="full-name">{t("contactForm:FullName")}</label>
-                        <input type="text" name="name" id="full-name" placeholder={t("contactForm:NameAndSurname") as string} required />
+                        <input type="text" autoComplete="name" name="name" id="full-name" placeholder={t("contactForm:NameAndSurname") as string} required />
                         <label htmlFor="email">{t("contactForm:EmailAddress")}</label>
-                        <input id="email" type="email" name="email" placeholder="@" required />
+                        <input id="email" autoComplete="email" type="email" name="email" placeholder="@" required />
                         {errorState.some((key) => key.type === "EMAIL") && <p className="error">{errorState.find((item) => item.type === "EMAIL")?.message}</p>}
                         <label htmlFor="message">{t("contactForm:Message")}</label>
                         <textarea rows={5} name="message" id="message" placeholder={t("contactForm:MessagePlaceholder") as string} required></textarea>

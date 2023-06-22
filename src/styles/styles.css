@@ -68,7 +68,7 @@
 
 @media (max-width: 1366px) {
     .hero-container {
-        min-height: calc(100dvh - var(--header-size) - 1.5rem);
+        min-height: calc(100svh - var(--header-size) - 1.5rem);
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -144,13 +144,14 @@
 
 .profile-picture {
     display: block;
-    width: 220px;
-    height: 220px;
+    width: clamp(120px, 40vw, 220px);
+    height: clamp(120px, 40vw, 220px);
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid rgba(var(--accent-color-rgb), 0.8);
     margin-bottom: 2rem;
 }
+
 
 .hero-title {
     font-size: clamp(4rem, 20vw, 8rem);
