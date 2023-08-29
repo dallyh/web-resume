@@ -1,13 +1,11 @@
 import React, { FormEvent, useState, useEffect, useRef, Fragment } from "react";
-import { FormError, useForm, ValidationError } from "@formspree/react";
+import { useForm } from "@formspree/react";
 import { getI18n, useTranslation } from "react-i18next";
 import autoAnimate from "@formkit/auto-animate";
 import "./ContactForm.css";
 
 const contactForm = () => {
-    const [state, handleSubmit] = useForm("mayzkojd", {
-        debug: true,
-    });
+    const [state, handleSubmit] = useForm("mayzkojd");
     const [errorState, setErrorMessage] = useState([{ type: "", message: "" }]);
     const { t } = useTranslation("contactForm");
     const isFirstRender = useRef(true);
@@ -20,7 +18,34 @@ const contactForm = () => {
             isFirstRender.current = false;
             return;
         }
-        validateError(state.errors);
+        var formErrors = state.errors?.getAllFieldErrors();
+
+        if (formErrors === undefined) {
+            console.debug("No errors returned from form.")
+            setErrorMessage((prevState) => [
+                ...prevState,
+                {
+                    type: "UNDEFINED",
+                    message: t("contactForm:SubmitError"),
+                },
+            ]);
+            return;
+        }
+
+        formErrors.map((x) => {
+            x[1].map((e) => {
+                validateError(e.code, e.message);
+            })
+        });
+
+        setErrorMessage((prevState) => [
+            ...prevState,
+            {
+                type: "CORRECT_FIELDS",
+                message: t("contactForm:ERROR_CORRECT_FIELDS"),
+            },
+        ]);
+
     }, [state.errors]);
 
     // Animate form
@@ -30,44 +55,38 @@ const contactForm = () => {
     }, [formRef, formWrapperRef]);
 
     // Validate form submission errors
-    const validateError = (errors: FormError[]) => {
-        if (errors.length === 0) {
-            console.log("0");
-            return undefined;
+    const validateError = (errorCode: string, errorMessage: string) => {
+        switch (errorCode) {
+            case "TYPE_EMAIL":
+                setErrorMessage((prevState) => [
+                    ...prevState,
+                    {
+                        type: "EMAIL",
+                        message: t("contactForm:ERROR_TYPE_EMAIL"),
+                    },
+                ]);
+                break;
+            case "TYPE_TEXT":
+                setErrorMessage((prevState) => [
+                    ...prevState,
+                    {
+                        type: "TEXT",
+                        message: t("contactForm:ERROR_TYPE_TEXT"),
+                    },
+                ]);
+                break;
+            default:
+                setErrorMessage((prevState) => [
+                    ...prevState,
+                    {
+                        type: errorCode?? "UNDEFINED",
+                        message: errorMessage,
+                    },
+                ]);
+                break;
         }
-
-        errors.forEach((e) => {
-            switch (e.code) {
-                case "TYPE_EMAIL":
-                    setErrorMessage((prevState) => [
-                        ...prevState,
-                        {
-                            type: "EMAIL",
-                            message: t("contactForm:ERROR_TYPE_EMAIL"),
-                        },
-                    ]);
-                    break;
-                case "TYPE_TEXT":
-                    setErrorMessage((prevState) => [
-                        ...prevState,
-                        {
-                            type: "TEXT",
-                            message: t("contactForm:ERROR_TYPE_TEXT"),
-                        },
-                    ]);
-                    break;
-                default:
-                    setErrorMessage((prevState) => [
-                        ...prevState,
-                        {
-                            type: e.code?? "UNDEFINED",
-                            message: e.message ,
-                        },
-                    ]);
-                    break;
-            }
-        });
     };
+
     return (
         <div ref={formWrapperRef}>
             {state.succeeded && (
@@ -85,11 +104,12 @@ const contactForm = () => {
                         {errorState.some((key) => key.type === "EMAIL") && <p className="error">{errorState.find((item) => item.type === "EMAIL")?.message}</p>}
                         <label htmlFor="message">{t("contactForm:Message")}</label>
                         <textarea rows={5} name="message" id="message" placeholder={t("contactForm:MessagePlaceholder") as string} required></textarea>
-                        {errorState.some((key) => key.type === "TEXT") && <p className="error">{errorState.find((item) => item.type === "EMAIL")?.message}</p>}
+                        {errorState.some((key) => key.type === "TEXT") && <p className="error">{errorState.find((item) => item.type === "TEXT")?.message}</p>}
                         <input type="hidden" name="_subject" id="email-subject" value="New resume submission" />
                         <input type="hidden" name="_language" value="cs" />
                     </fieldset>
-                    {errorState.some((key) => key.type != "") && <p className="error">{t("contactForm:ERROR_CORRECT_FIELDS")}</p>}
+                    {errorState.some((key) => key.type === "CORRECT_FIELDS") && <p className="error">{errorState.find((item) => item.type === "CORRECT_FIELDS")?.message}</p>}
+                    {errorState.some((key) => key.type === "UNDEFINED") && <p className="error">{errorState.find((item) => item.type === "UNDEFINED")?.message}</p>}
                     <button type="submit" id="fs-frm-submit-button" className="button" disabled={state.submitting}>
                         {t("contactForm:Submit")}
                     </button>
