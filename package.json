@@ -12,31 +12,31 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^2.3.2",
-    "@astrojs/sitemap": "^2.0.2",
+    "@astrojs/react": "^3.0.4",
+    "@astrojs/sitemap": "^3.0.3",
     "@formkit/auto-animate": "^1.0.0-beta.6",
-    "@formspree/react": "^2.5.0",
-    "@types/hammerjs": "^2.0.41",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "astro": "^2.10.12",
+    "@formspree/react": "^2.5.1",
+    "@types/hammerjs": "^2.0.44",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "astro": "^3.5.3",
     "astro-i18next": "^1.0.0-beta.21",
-    "astro-robots-txt": "^0.5.0",
+    "astro-robots-txt": "^1.0.0",
     "country-flag-emoji-polyfill": "^0.1.4",
     "hammerjs": "^2.0.8",
-    "i18next": "^23.4.4",
+    "i18next": "^23.7.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^13.1.2",
+    "react-i18next": "^13.4.1",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
-    "@types/bootstrap": "^5.2.6",
-    "astro-compress": "2.0.14",
-    "autoprefixer": "^10.4.15",
+    "@types/bootstrap": "^5.2.9",
+    "astro-compress": "2.2.3",
+    "autoprefixer": "^10.4.16",
     "install": "0.13.0",
-    "iso-639-1": "^3.0.0",
+    "iso-639-1": "^3.1.0",
     "locale-emoji": "^0.3.0",
-    "npm": "9.8.1"
+    "npm": "10.2.3"
   }
 }

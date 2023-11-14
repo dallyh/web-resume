@@ -15,8 +15,5 @@ export default defineConfig({
         robotsTxt(),
         compress(),
         react()
-    ],
-    experimental: {
-      assets: true
-     }
+    ]
 });

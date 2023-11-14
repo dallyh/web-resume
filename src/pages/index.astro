@@ -8,7 +8,6 @@ import i18next, { t, changeLanguage } from "i18next";
 import Contact from "../components/Contact.astro";
 import SkillCards from "../components/SkillCards.astro";
 import { Image } from "astro:assets";
-
 // Images
 import profilePicture from "../assets/img/profile.png";
 import abbyyLogo from "../assets/img/company-logos/ABBYY.png";
@@ -27,7 +26,7 @@ changeLanguage("cs");
             <section class="hero-container" id="hero">
                 <div class="hero">
                     <div class="profile-picture-wrapper">
-                        <Image class="profile-picture" src={profilePicture} width={220} height={220} format="avif" alt="Profile picture" />
+                        <Image class="profile-picture" src={profilePicture} width={220} height={220} alt="Profile picture" />
                         <div class="disc disc-1"></div>
                         <div class="disc disc-2"></div>
                         <div class="disc disc-3"></div>
@@ -190,19 +189,19 @@ changeLanguage("cs");
                     <p><Fragment set:html={t("index:CertLinkedIn")} /></p>
                     <div class="certifications-grid">
                         <div class="cert-card">
-                            <Image class="cert-card-logo" src={msftLogo} format="avif" width={150} height={32} alt="Microsoft logo" />
+                            <Image class="cert-card-logo" src={msftLogo} width={150} height={32} alt="Microsoft logo" />
                             <p class="cer-card-description">Power Platform Fundamentals (PL-900)</p>
                         </div>
                         <div class="cert-card">
-                            <Image class="cert-card-logo" src={msftLogo} format="avif" width={150} height={32} alt="Microsoft logo" />
+                            <Image class="cert-card-logo" src={msftLogo} width={150} height={32} alt="Microsoft logo" />
                             <p class="cer-card-description">Microsoft Dynamics 365 Fundamentals (PL-900)</p>
                         </div>
                         <div class="cert-card">
-                            <Image class="cert-card-logo abbyy" src={abbyyLogo} format="avif" width={110} alt="ABBYY logo" />
+                            <Image class="cert-card-logo abbyy" src={abbyyLogo} width={110} alt="ABBYY logo" />
                             <p class="cer-card-description">FlexiCapture 12 Basic</p>
                         </div>
                         <div class="cert-card">
-                            <Image class="cert-card-logo abbyy" src={abbyyLogo} format="avif" width={110} alt="ABBYY logo" />
+                            <Image class="cert-card-logo abbyy" src={abbyyLogo} width={110} alt="ABBYY logo" />
                             <p class="cer-card-description">Vantage Certified Business Analyst</p>
                         </div>
                         <div class="cert-card">
@@ -218,7 +217,7 @@ changeLanguage("cs");
                             <p class="cer-card-description">K2 Citizen Developer</p>
                         </div>
                         <div class="cert-card">
-                            <Image class="cert-card-logo" src={mfilesLogo} format="avif" width={150} alt="M-Files Corporation logo" />
+                            <Image class="cert-card-logo" src={mfilesLogo} width={150} alt="M-Files Corporation logo" />
                             <p class="cer-card-description">M-Files Solution Engineer</p>
                         </div>
                     </div>
